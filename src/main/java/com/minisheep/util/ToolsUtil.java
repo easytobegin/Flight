@@ -5,6 +5,9 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Created by minisheep on 16/12/22.
+ */
 
 public class ToolsUtil {
 	public static String getSystemDate(){

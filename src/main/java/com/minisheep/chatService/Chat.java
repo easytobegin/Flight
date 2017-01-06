@@ -17,6 +17,10 @@ import com.minisheep.com.minisheep.SearchFlight.SearchIATACodeByCNName;
 import com.minisheep.util.MysqlUtil;
 import com.minisheep.util.ToolsUtil;
 
+/**
+ * Created by minisheep on 16/12/28.
+ */
+
 public class Chat {
 	private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	

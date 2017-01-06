@@ -29,6 +29,9 @@ import org.wltea.analyzer.lucene.IKAnalyzer;
 import com.minisheep.Bean.Knowledge;
 import com.minisheep.util.MysqlUtil;
 
+/**
+ * Created by minisheep on 16/12/28.
+ */
 
 public class Service {
 	public static String cutWords(String words) throws IOException{

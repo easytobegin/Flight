@@ -1,5 +1,8 @@
 package com.minisheep.Bean;
 
+/**
+ * Created by minisheep on 16/12/27.
+ */
 public class Knowledge {
 	private int id;
 	private String question;

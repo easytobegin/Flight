@@ -7,6 +7,10 @@ import com.minisheep.Bean.Flight;
 import com.minisheep.Bean.FlightDetail;
 import com.minisheep.util.MysqlUtil;
 
+/**
+ * Created by minisheep on 16/12/28.
+ */
+
 public class SearchFlight {
 	public List<Flight> searchFlightname(String flightname){  //比如SC4770
 		int length = flightname.length();

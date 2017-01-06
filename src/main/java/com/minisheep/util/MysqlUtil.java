@@ -16,6 +16,9 @@ import com.minisheep.Bean.Knowledge;
 import com.mysql.jdbc.PreparedStatement;
 import com.sun.org.apache.bcel.internal.generic.NEW;
 
+/**
+ * Created by minisheep on 16/12/22.
+ */
 public class MysqlUtil {
 	private Connection getConnection(){
 		String url = "jdbc:mysql://localhost:3306/LuceneTestDemo?characterEncoding=utf8";

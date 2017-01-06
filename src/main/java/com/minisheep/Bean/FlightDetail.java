@@ -2,7 +2,10 @@ package com.minisheep.Bean;
 
 //航班信息:例如厦门 飞 杭州
 
-public class FlightDetail {   
+/**
+ * Created by minisheep on 16/12/27.
+ */
+public class FlightDetail {
 	private int segmentId;
 	private int flightId;
 	private String origin;
