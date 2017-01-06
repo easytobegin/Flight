@@ -1,4 +1,4 @@
-package com.minisheep.com.minisheep.SearchFlight;
+package com.minisheep.SearchFlight;
 
 import java.util.ArrayList;
 import java.util.List;

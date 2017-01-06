@@ -11,9 +11,9 @@ import java.util.Scanner;
 import com.minisheep.Bean.Flight;
 import com.minisheep.Bean.FlightDetail;
 
-import com.minisheep.com.minisheep.SearchFlight.SearchFlight;
-import com.minisheep.com.minisheep.SearchFlight.SearchFlightDetail;
-import com.minisheep.com.minisheep.SearchFlight.SearchIATACodeByCNName;
+import com.minisheep.SearchFlight.SearchFlight;
+import com.minisheep.SearchFlight.SearchFlightDetail;
+import com.minisheep.SearchFlight.SearchIATACodeByCNName;
 import com.minisheep.util.MysqlUtil;
 import com.minisheep.util.ToolsUtil;
 
@@ -28,7 +28,7 @@ public class Chat {
 		Date now = new Date();
 		String createTime = this.format.format(now);
 		String answer = "";
-		answer = Service.chat(openId, createTime, question);
+		answer = Service.chat(openId, createTime, question);  //修改这个函数看能否是答案的唯一出口
 		System.out.println(answer);
 	}
 	

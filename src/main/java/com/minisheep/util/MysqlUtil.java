@@ -1,20 +1,16 @@
 package com.minisheep.util;
 
+import com.minisheep.Bean.Flight;
+import com.minisheep.Bean.FlightDetail;
+import com.minisheep.Bean.Knowledge;
+import com.mysql.jdbc.PreparedStatement;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.imageio.stream.FileCacheImageInputStream;
-
-import com.minisheep.Bean.CityMap;
-import com.minisheep.Bean.Flight;
-import com.minisheep.Bean.FlightDetail;
-import com.minisheep.Bean.Knowledge;
-import com.mysql.jdbc.PreparedStatement;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 /**
  * Created by minisheep on 16/12/22.

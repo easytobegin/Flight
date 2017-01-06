@@ -28,5 +28,8 @@ public class GetJsonInterfaceInfo {
         String Strjson=json.toString();
         System.out.println("原始数据:");
         System.out.println(Strjson.toString());
+
+        //Servlet里面用request.getParameter("参数名");取到
+
     }
 }

@@ -8,8 +8,17 @@
         <servlet-name>jsonServlet</servlet-name>
         <servlet-class>com.minisheep.test.JsonServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>serverTest</servlet-name>
+        <servlet-class>com.minisheep.test.ServerTest</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>jsonServlet</servlet-name>
         <url-pattern>/demo</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>serverTest</servlet-name>
+        <url-pattern>/testdemo</url-pattern>
+    </servlet-mapping>
+
 </web-app>
