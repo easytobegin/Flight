@@ -73,7 +73,7 @@ public class ClientTest {
                 //获得输入流,从服务器端获得数据
                 InputStream inputStream = (InputStream) httpURLConnection.getInputStream();
 
-                //return (changeInputStream(inputStream, encode));
+                return (changeInputStream(inputStream, encode));
             }
         } catch (IOException e) {
             e.printStackTrace();
