@@ -1,9 +1,9 @@
-package com.minisheep.SearchFlight;
+package com.minisheep.searchflight;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.minisheep.Bean.FlightDetail;
+import com.minisheep.bean.FlightDetail;
 import com.minisheep.util.MysqlUtil;
 
 /**

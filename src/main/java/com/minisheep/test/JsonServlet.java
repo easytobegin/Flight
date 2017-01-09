@@ -1,6 +1,5 @@
 package com.minisheep.test;
 
-import com.minisheep.chatService.Chat;
 import org.json.JSONObject;
 
 import javax.servlet.ServletException;

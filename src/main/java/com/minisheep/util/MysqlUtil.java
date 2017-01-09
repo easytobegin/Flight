@@ -1,8 +1,8 @@
 package com.minisheep.util;
 
-import com.minisheep.Bean.Flight;
-import com.minisheep.Bean.FlightDetail;
-import com.minisheep.Bean.Knowledge;
+import com.minisheep.bean.Flight;
+import com.minisheep.bean.FlightDetail;
+import com.minisheep.bean.Knowledge;
 import com.mysql.jdbc.PreparedStatement;
 
 import java.sql.Connection;

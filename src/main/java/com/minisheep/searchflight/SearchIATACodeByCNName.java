@@ -1,4 +1,4 @@
-package com.minisheep.SearchFlight;
+package com.minisheep.searchflight;
 
 import com.minisheep.util.MysqlUtil;
 

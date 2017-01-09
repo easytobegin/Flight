@@ -1,4 +1,4 @@
-package com.minisheep.chatService;
+package com.minisheep.chatservice;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,7 +26,7 @@ import org.wltea.analyzer.core.IKSegmenter;
 import org.wltea.analyzer.core.Lexeme;
 import org.wltea.analyzer.lucene.IKAnalyzer;
 
-import com.minisheep.Bean.Knowledge;
+import com.minisheep.bean.Knowledge;
 import com.minisheep.util.MysqlUtil;
 
 /**

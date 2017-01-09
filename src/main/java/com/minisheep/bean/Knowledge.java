@@ -1,4 +1,4 @@
-package com.minisheep.Bean;
+package com.minisheep.bean;
 
 /**
  * Created by minisheep on 16/12/27.

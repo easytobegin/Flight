@@ -1,4 +1,4 @@
-package com.minisheep.Bean;
+package com.minisheep.bean;
 
 //航班信息:例如厦门 飞 杭州
 
