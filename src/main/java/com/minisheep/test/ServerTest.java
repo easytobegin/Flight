@@ -36,7 +36,7 @@ public class ServerTest extends HttpServlet {
         PrintWriter out = response.getWriter();
         String question = request.getParameter("question");
 
-        if(question.equals("厦门到北京的航班信息")){   //空指针异常
+        if(question.equals("厦门到北京的航班信息")){  //问题
             out.print("test success!");
         }else{
             out.print("test fail!");

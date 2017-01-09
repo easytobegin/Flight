@@ -14,12 +14,12 @@ import java.util.Map;
 /**
  * Created by minisheep on 17/1/6.
  */
-public class ClientTest {
+public class ClientUtil {
     //服务器端的url
     private static String PATH = "http://localhost:8080/testdemo";
     private static URL url;
 
-    public ClientTest() {
+    public ClientUtil() {
     }
 
     static {
@@ -105,7 +105,7 @@ public class ClientTest {
 
     public static void main(String[] args){
         Map<String,String> params = new HashMap<String, String>();
-        params.put("question","厦门到北京的航班信息");
+        params.put("question","厦门到北京的航班信息");   //存放url末尾请求参数的键值对
         String result = sendPostMessage(params,"utf-8");
         System.out.println("result:" + result);
     }
