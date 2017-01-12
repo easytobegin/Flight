@@ -1,5 +1,8 @@
 package com.minisheep.test;
 
+import com.minisheep.chatservice.Chat;
+import com.minisheep.chatservice.Service;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -36,11 +39,10 @@ public class ServerTest extends HttpServlet {
         PrintWriter out = response.getWriter();
         String question = request.getParameter("question");
 
-        if(question.equals("厦门到北京的航班信息")){  //问题
-            out.print("test success!");
-        }else{
-            out.print("test fail!");
-        }
+        Chat chat = new Chat();
+        //out.print(question);
+        String result = chat.getAnswer(question);
+        out.print(result);
         out.flush();
         out.close();
     }

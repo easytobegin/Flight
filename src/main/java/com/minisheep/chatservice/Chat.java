@@ -83,6 +83,7 @@ public class Chat {
 		if(flightDetails.size() == 0 && cityName.size() != 0){
 			System.out.println("没有此航班的动态信息!");
 			//break;
+			answer += "没有此航班的动态信息!";
 		}
 		for(FlightDetail detail : flightDetails){
 			String finalstr = "航班号:" + detail.getFlightId() + "\n" + "预计起飞时间:" + detail.getScheduleDepartureTime() + "\n" + "预计到达时间:"

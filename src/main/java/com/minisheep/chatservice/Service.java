@@ -39,7 +39,7 @@ public class Service {
 		StringReader sr = new StringReader(words);
 		IKSegmenter ik = new IKSegmenter(sr, true);
 		Lexeme lex = null;
-		
+		System.out.println("分词结果为:");
 		while((lex = ik.next()) != null){
 			System.out.print(lex.getLexemeText() + "|");
 			finalStr += lex.getLexemeText() + "|";
@@ -77,6 +77,7 @@ public class Service {
 
 	private static Knowledge searchIndex(String content){
 		Knowledge knowledge = null;
+		Knowledge result = null;
 		String pathname = "/Users/minisheep/Documents/index";
 		try{
 			Directory directory = FSDirectory.open(new File(pathname));
@@ -86,17 +87,37 @@ public class Service {
 			QueryParser questParser = new QueryParser(Version.LUCENE_46,"question",new IKAnalyzer(true));
 			Query query = questParser.parse(QueryParser.escape(content));
 			
-			TopDocs topDocs = searcher.search(query, 1);
-			System.out.println("最大的评分为:" + topDocs.getMaxScore());
+			TopDocs topDocs = searcher.search(query, 3);
+
+			float maxScore = topDocs.getMaxScore();
+			//System.out.println("最大的评分为:" + maxScore);
+
+			System.out.println("给您推荐的相关问题答案如下:");
 			if(topDocs.totalHits > 0){
+				result = new Knowledge();
 				knowledge = new Knowledge();
 				ScoreDoc[] scoreDocs = topDocs.scoreDocs;
 				for(ScoreDoc sd : scoreDocs){
 					Document doc = searcher.doc(sd.doc);
+
 					knowledge.setId(doc.getField("id").numericValue().intValue());
-					knowledge.setQuestion("question");
+					knowledge.setQuestion(doc.get("question"));
 					knowledge.setAnswer(doc.get("answer"));
 					knowledge.setCategory(doc.getField("category").numericValue().intValue());
+
+					//这部分可以做近似推荐
+
+					System.out.println("评分为:" + sd.score);
+					System.out.println("问题为:" + knowledge.getQuestion());
+					System.out.println("答案为:" + knowledge.getAnswer());
+
+					if(Math.abs(sd.score - maxScore) < 0.000001){
+						result.setId(knowledge.getId());
+						result.setAnswer(knowledge.getAnswer());
+						result.setCategory(knowledge.getCategory());
+						result.setQuestion(knowledge.getQuestion());
+					}
+					System.out.println("-------------------------------------");
 				}
 			}
 			reader.close();
@@ -104,9 +125,10 @@ public class Service {
 		}catch (Exception e) {
 			// TODO: handle exception
 			knowledge = null;
+			result = null;
 			e.printStackTrace();
 		}
-		return knowledge;
+		return result;
 	}
 	
 	public static String chat(String openId,String createTime,String question){

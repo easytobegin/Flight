@@ -1,5 +1,7 @@
 package com.minisheep.test;
 
+import com.minisheep.chatservice.Chat;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,6 +12,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * Created by minisheep on 17/1/6.
@@ -105,8 +108,15 @@ public class ClientUtil {
 
     public static void main(String[] args){
         Map<String,String> params = new HashMap<String, String>();
-        params.put("question","厦门到北京的航班信息");   //存放url末尾请求参数的键值对
-        String result = sendPostMessage(params,"utf-8");
-        System.out.println("result:" + result);
+        System.out.println("您好阿,我是智能机器人,请问有什么可以帮您?");
+        Chat chat = new Chat();
+        Scanner in=new Scanner(System.in);
+        String text = "";
+        while((text = in.next()) != null) {
+            params.put("question",text);   //存放url末尾请求参数的键值对
+            String result = sendPostMessage(params,"utf-8");
+            System.out.println(result);
+        }
+
     }
 }

@@ -17,6 +17,7 @@
           <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
         </element>
         <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/libs/IKAnalyzer2012FF_u1.jar" />
           <element id="library" level="project" name="Gradle: org.json:json:20160810" />
           <element id="library" level="project" name="Gradle: org.apache.lucene:lucene-core:4.6.0" />
           <element id="library" level="project" name="Gradle: org.apache.lucene:lucene-queries:4.6.0" />
@@ -27,7 +28,7 @@
           <element id="library" level="project" name="Gradle: org.apache.lucene:lucene-sandbox:4.6.0" />
           <element id="library" level="project" name="Gradle: org.apache.lucene:lucene-memory:4.6.0" />
           <element id="library" level="project" name="Gradle: jakarta-regexp:jakarta-regexp:1.4" />
-          <element id="file-copy" path="$PROJECT_DIR$/libs/IKAnalyzer2012FF_u1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/libs/tm-extractors-0.4.jar" />
         </element>
       </element>
     </root>
