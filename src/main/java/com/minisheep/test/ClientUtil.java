@@ -109,7 +109,6 @@ public class ClientUtil {
     public static void main(String[] args){
         Map<String,String> params = new HashMap<String, String>();
         System.out.println("您好阿,我是智能机器人,请问有什么可以帮您?");
-        Chat chat = new Chat();
         Scanner in=new Scanner(System.in);
         String text = "";
         while((text = in.next()) != null) {

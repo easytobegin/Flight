@@ -8,50 +8,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd731358-32ca-449a-824d-d7ccf5e62346" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/tm-extractors-0.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/util/ExtractorWord.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/classes/com/minisheep/Bean/CityMap.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/classes/com/minisheep/Bean/Flight.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/classes/com/minisheep/Bean/FlightDetail.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/classes/com/minisheep/Bean/Knowledge.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/classes/com/minisheep/SearchFlight/SearchFlight.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/classes/com/minisheep/SearchFlight/SearchFlightDetail.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/classes/com/minisheep/SearchFlight/SearchIATACodeByCNName.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/classes/com/minisheep/chatService/Chat.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/classes/com/minisheep/chatService/Service.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/classes/com/minisheep/test/ClientUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/classes/com/minisheep/test/GetJsonInterfaceInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/classes/com/minisheep/test/JsonServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/classes/com/minisheep/test/ServerTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/classes/com/minisheep/util/MysqlUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/classes/com/minisheep/util/ToolsUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/lib/IKAnalyzer2012FF_u1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/lib/jakarta-regexp-1.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/lib/json-20160810.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/lib/lucene-analyzers-common-4.6.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/lib/lucene-core-4.6.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/lib/lucene-highlighter-4.6.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/lib/lucene-memory-4.6.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/lib/lucene-queries-4.6.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/lib/lucene-queryparser-4.6.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/lib/lucene-sandbox-4.6.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/lib/mysql-connector-java-5.1.34.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/index.jsp" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/bean/BaseFlightInfo.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/minisheep/Bean/CityMap.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/minisheep/Bean/Flight.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/minisheep/Bean/FlightDetail.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/bean/Flight.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/bean/FlightDetail.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/bean/CityMap.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/bean/BaseAirport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/minisheep/SearchFlight/SearchFlight.class" afterPath="$PROJECT_DIR$/build/classes/main/com/minisheep/SearchFlight/SearchFlight.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/minisheep/SearchFlight/SearchFlightDetail.class" afterPath="$PROJECT_DIR$/build/classes/main/com/minisheep/SearchFlight/SearchFlightDetail.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/minisheep/chatService/Chat.class" afterPath="$PROJECT_DIR$/build/classes/main/com/minisheep/chatService/Chat.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/minisheep/chatService/Service.class" afterPath="$PROJECT_DIR$/build/classes/main/com/minisheep/chatService/Service.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/minisheep/test/ClientUtil.class" afterPath="$PROJECT_DIR$/build/classes/main/com/minisheep/test/ClientUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/minisheep/test/ServerTest.class" afterPath="$PROJECT_DIR$/build/classes/main/com/minisheep/test/ServerTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/minisheep/util/MysqlUtil.class" afterPath="$PROJECT_DIR$/build/classes/main/com/minisheep/util/MysqlUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/Gradle _ com.minisheep _ FlightPro-1.0-SNAPSHOT.war (exploded).war" afterPath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/Gradle _ com.minisheep _ FlightPro-1.0-SNAPSHOT.war (exploded).war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Gradle___com_minisheep___FlightPro_1_0_SNAPSHOT_war__exploded_.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Gradle___com_minisheep___FlightPro_1_0_SNAPSHOT_war__exploded_.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/FlightPro_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/FlightPro_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/FlightPro_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/FlightPro_test.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Service.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Service.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchFlight.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchFlight.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchFlightDetail.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchFlightDetail.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/test/ClientUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/test/ClientUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/test/ServerTest.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/test/ServerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/stopword.dic" afterPath="$PROJECT_DIR$/src/main/java/stopword.dic" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -142,31 +124,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Service.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Service.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="152" column="22" lean-forward="false" selection-start-line="152" selection-start-column="22" selection-end-line="152" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Chat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+            <state relative-caret-position="-352">
+              <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stopword.dic" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/stopword.dic">
+      <file leaf-file-name="Service.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Service.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="1245" column="3" lean-forward="false" selection-start-line="1245" selection-start-column="3" selection-end-line="1245" selection-end-column="3" />
+            <state relative-caret-position="330">
+              <caret line="49" column="4" lean-forward="false" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetJsonInterfaceInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/test/GetJsonInterfaceInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -175,10 +157,36 @@
       <file leaf-file-name="ClientUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/test/ClientUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="115" column="49" lean-forward="false" selection-start-line="115" selection-start-column="49" selection-end-line="115" selection-end-column="49" />
+            <state relative-caret-position="-911">
+              <caret line="38" column="23" lean-forward="false" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseFlightInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/bean/BaseFlightInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1275">
+              <caret line="323" column="18" lean-forward="false" selection-start-line="323" selection-start-column="18" selection-end-line="323" selection-end-column="18" />
+              <folding>
+                <element signature="e#8325#8326#0" expanded="true" />
+                <element signature="e#8360#8361#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseAirport.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/bean/BaseAirport.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1020">
+              <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
+              <folding>
+                <element signature="e#2179#2180#0" expanded="true" />
+                <element signature="e#2224#2225#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -187,39 +195,8 @@
       <file leaf-file-name="JsonServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/test/JsonServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="54" column="1" lean-forward="false" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MysqlUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-963">
-              <caret line="198" column="31" lean-forward="false" selection-start-line="198" selection-start-column="31" selection-end-line="198" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1483947005000" expanded="true" signature="1289:1312" ph="select * fro... knowledge" />
-                <marker date="1483947005000" expanded="true" signature="2109:2186" ph="select chat_... chat_log" />
-                <marker date="1483947005000" expanded="true" signature="2812:2882" ph="select answe... knowledge_sub" />
-                <marker date="1483947005000" expanded="true" signature="3480:3535" ph="select joke_... joke" />
-                <marker date="1483947005000" expanded="true" signature="4153:4242" ph="insert into chat_log... " />
-                <marker date="1483947005000" expanded="true" signature="4849:4910" ph="insert into knowledge... " />
-                <marker date="1483947005000" expanded="true" signature="5828:5881" ph="select * fro... Flight" />
-                <marker date="1483947005000" expanded="true" signature="7244:7296" ph="select IATAC... CityMap" />
-                <marker date="1483947005000" expanded="true" signature="7938:8001" ph="select * fro... FlightDetail" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ToolsUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/ToolsUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="-221">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -228,32 +205,28 @@
       <file leaf-file-name="ServerTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/test/ServerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="136">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExtractorWord.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/ExtractorWord.java">
+      <file leaf-file-name="SearchFlight.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchFlight.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="240">
+              <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
+      <file leaf-file-name="SearchIATACodeByCNName.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchIATACodeByCNName.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -267,6 +240,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>GetJsonInterfaceInfo</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -631,20 +609,25 @@
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/com/minisheep/SearchFlight/SearchFlightDetail.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/com/minisheep/SearchFlight/SearchIATACodeByCNName.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/util/ToolsUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/test/JsonServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/test/GetJsonInterfaceInfo.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/test/ClientTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/chatService/Chat.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/test/ServerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/test/ClientUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/RelateRecommend.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Service.java" />
         <option value="$PROJECT_DIR$/src/main/java/stopword.dic" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/util/ExtractorWord.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/test/ClientUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/bean/FlightDetail.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/bean/FlightInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/bean/BaseFlightInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/bean/BaseAirport.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchFlight.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java" />
       </list>
     </option>
   </component>
@@ -662,9 +645,9 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="205" />
+    <option name="x" value="96" />
     <option name="y" value="23" />
-    <option name="width" value="1280" />
+    <option name="width" value="1081" />
     <option name="height" value="734" />
   </component>
   <component name="ProjectView">
@@ -682,7 +665,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -692,17 +675,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlightPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlightPro" />
+              <option name="myItemId" value="newFlightPro" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -712,7 +685,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FlightPro" />
+              <option name="myItemId" value="newFlightPro" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -730,7 +703,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FlightPro" />
+              <option name="myItemId" value="newFlightPro" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -752,7 +725,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FlightPro" />
+              <option name="myItemId" value="newFlightPro" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -782,7 +755,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FlightPro" />
+              <option name="myItemId" value="newFlightPro" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -812,7 +785,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FlightPro" />
+              <option name="myItemId" value="newFlightPro" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -842,7 +815,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FlightPro" />
+              <option name="myItemId" value="newFlightPro" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -872,7 +845,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FlightPro" />
+              <option name="myItemId" value="newFlightPro" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -902,7 +875,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FlightPro" />
+              <option name="myItemId" value="newFlightPro" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -912,17 +885,18 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.1484375" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="js.eslint.eslintPackage" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -936,7 +910,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/minisheep/chatService" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Chat">
+  <component name="RunManager" selected="Tomcat Server.Unnamed">
     <configuration default="false" name="Chat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1268,6 +1242,15 @@
       <setting name="depsClasspath" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -1491,8 +1474,8 @@
     <recent_temporary>
       <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Application.Chat" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ExtractorWord" />
-        <item index="2" class="java.lang.String" itemvalue="Application.ClientUtil" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ClientUtil" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ExtractorWord" />
         <item index="3" class="java.lang.String" itemvalue="Application.GetJsonInterfaceInfo" />
       </list>
     </recent_temporary>
@@ -1517,12 +1500,19 @@
       <workItem from="1483953779222" duration="807000" />
       <workItem from="1483966184982" duration="921000" />
       <workItem from="1484008386686" duration="8863000" />
-      <workItem from="1484201956546" duration="9718000" />
+      <workItem from="1484201956546" duration="10949000" />
+      <workItem from="1484213022398" duration="1457000" />
+      <workItem from="1484267930579" duration="22177000" />
+      <workItem from="1484613397202" duration="3618000" />
+      <workItem from="1484797724008" duration="55000" />
+      <workItem from="1484797787592" duration="1000" />
+      <workItem from="1484797866056" duration="6837000" />
+      <workItem from="1484872639644" duration="5028000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56713000" />
+    <option name="totallyTimeSpent" value="97117000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1534,8 +1524,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="205" y="23" width="1280" height="734" extended-state="0" />
-    <editor active="false" />
+    <frame x="96" y="23" width="1081" height="734" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1558,13 +1548,13 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29107982" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25508606" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2719704" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14453125" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.015726179" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1619,9 +1609,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
           <caret line="54" column="1" lean-forward="true" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1656,16 +1644,17 @@
         <state relative-caret-position="2970">
           <caret line="198" column="31" lean-forward="false" selection-start-line="198" selection-start-column="31" selection-end-line="198" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1483947005000" expanded="true" signature="1289:1312" ph="select * fro... knowledge" />
-            <marker date="1483947005000" expanded="true" signature="2109:2186" ph="select chat_... chat_log" />
-            <marker date="1483947005000" expanded="true" signature="2812:2882" ph="select answe... knowledge_sub" />
-            <marker date="1483947005000" expanded="true" signature="3480:3535" ph="select joke_... joke" />
-            <marker date="1483947005000" expanded="true" signature="4153:4242" ph="insert into chat_log... " />
-            <marker date="1483947005000" expanded="true" signature="4849:4910" ph="insert into knowledge... " />
-            <marker date="1483947005000" expanded="true" signature="5828:5881" ph="select * fro... Flight" />
-            <marker date="1483947005000" expanded="true" signature="7244:7296" ph="select IATAC... CityMap" />
-            <marker date="1483947005000" expanded="true" signature="7938:8001" ph="select * fro... FlightDetail" />
+            <element signature="e#6424#6440#0" expanded="true" />
+            <element signature="e#9164#9180#0" expanded="true" />
+            <marker date="1484877548000" expanded="true" signature="1713:1736" ph="select * fro... knowledge" />
+            <marker date="1484877548000" expanded="true" signature="2533:2610" ph="select chat_... chat_log" />
+            <marker date="1484877548000" expanded="true" signature="3236:3306" ph="select answe... knowledge_sub" />
+            <marker date="1484877548000" expanded="true" signature="3904:3959" ph="select joke_... joke" />
+            <marker date="1484877548000" expanded="true" signature="4577:4666" ph="insert into chat_log... " />
+            <marker date="1484877548000" expanded="true" signature="5273:5334" ph="insert into knowledge... " />
+            <marker date="1484877548000" expanded="true" signature="6260:6319" ph="select * fro... Flight" />
+            <marker date="1484877548000" expanded="true" signature="8215:8272" ph="select IATAC... CityMap" />
+            <marker date="1484877548000" expanded="true" signature="8923:8986" ph="select * fro... FlightDetail" />
           </folding>
         </state>
       </provider>
@@ -1674,7 +1663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1682,9 +1670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1722,9 +1707,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1742,9 +1725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1761,16 +1741,17 @@
         <state relative-caret-position="135">
           <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1483947005000" expanded="true" signature="1289:1312" ph="select * fro... knowledge" />
-            <marker date="1483947005000" expanded="true" signature="2109:2186" ph="select chat_... chat_log" />
-            <marker date="1483947005000" expanded="true" signature="2812:2882" ph="select answe... knowledge_sub" />
-            <marker date="1483947005000" expanded="true" signature="3480:3535" ph="select joke_... joke" />
-            <marker date="1483947005000" expanded="true" signature="4153:4242" ph="insert into chat_log... " />
-            <marker date="1483947005000" expanded="true" signature="4849:4910" ph="insert into knowledge... " />
-            <marker date="1483947005000" expanded="true" signature="5828:5881" ph="select * fro... Flight" />
-            <marker date="1483947005000" expanded="true" signature="7244:7296" ph="select IATAC... CityMap" />
-            <marker date="1483947005000" expanded="true" signature="7938:8001" ph="select * fro... FlightDetail" />
+            <element signature="e#6424#6440#0" expanded="true" />
+            <element signature="e#9164#9180#0" expanded="true" />
+            <marker date="1484877548000" expanded="true" signature="1713:1736" ph="select * fro... knowledge" />
+            <marker date="1484877548000" expanded="true" signature="2533:2610" ph="select chat_... chat_log" />
+            <marker date="1484877548000" expanded="true" signature="3236:3306" ph="select answe... knowledge_sub" />
+            <marker date="1484877548000" expanded="true" signature="3904:3959" ph="select joke_... joke" />
+            <marker date="1484877548000" expanded="true" signature="4577:4666" ph="insert into chat_log... " />
+            <marker date="1484877548000" expanded="true" signature="5273:5334" ph="insert into knowledge... " />
+            <marker date="1484877548000" expanded="true" signature="6260:6319" ph="select * fro... Flight" />
+            <marker date="1484877548000" expanded="true" signature="8215:8272" ph="select IATAC... CityMap" />
+            <marker date="1484877548000" expanded="true" signature="8923:8986" ph="select * fro... FlightDetail" />
           </folding>
         </state>
       </provider>
@@ -1808,13 +1789,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/artifacts/unnamed.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/myExt.dic">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/IKAnalyzer.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1851,54 +1825,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/RelateRecommend.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/RelateRecommend.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/stopword.dic">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="18675">
+          <caret line="1245" column="3" lean-forward="false" selection-start-line="1245" selection-start-column="3" selection-end-line="1245" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/bean/CityMap.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/myExt.dic">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-274">
-          <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="285">
+          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/bean/Flight.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-829">
-          <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/bean/FlightDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1188">
-          <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/bean/Flight.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/bean/Knowledge.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-          <folding>
-            <element signature="e#210#211#0" expanded="false" />
-            <element signature="e#226#227#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchFlight.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/ToolsUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="2">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/ExtractorWord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="251" column="54" lean-forward="true" selection-start-line="251" selection-start-column="54" selection-end-line="251" selection-end-column="54" />
+          <folding>
+            <element signature="e#6424#6440#0" expanded="true" />
+            <element signature="e#9164#9180#0" expanded="true" />
+            <marker date="1484877548000" expanded="true" signature="1713:1736" ph="select * fro... knowledge" />
+            <marker date="1484877548000" expanded="true" signature="2533:2610" ph="select chat_... chat_log" />
+            <marker date="1484877548000" expanded="true" signature="3236:3306" ph="select answe... knowledge_sub" />
+            <marker date="1484877548000" expanded="true" signature="3904:3959" ph="select joke_... joke" />
+            <marker date="1484877548000" expanded="true" signature="4577:4666" ph="insert into chat_log... " />
+            <marker date="1484877548000" expanded="true" signature="5273:5334" ph="insert into knowledge... " />
+            <marker date="1484877548000" expanded="true" signature="6260:6319" ph="select * fro... Flight" />
+            <marker date="1484877548000" expanded="true" signature="8215:8272" ph="select IATAC... CityMap" />
+            <marker date="1484877548000" expanded="true" signature="8923:8986" ph="select * fro... FlightDetail" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1910,116 +1901,91 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchFlight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchIATACodeByCNName.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/test/GetJsonInterfaceInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/test/JsonServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="54" column="1" lean-forward="false" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/ToolsUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="150">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/stopword.dic">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="1245" column="3" lean-forward="false" selection-start-line="1245" selection-start-column="3" selection-end-line="1245" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="152" column="22" lean-forward="false" selection-start-line="152" selection-start-column="22" selection-end-line="152" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/test/ClientUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="115" column="49" lean-forward="false" selection-start-line="115" selection-start-column="49" selection-end-line="115" selection-end-column="49" />
+        <state relative-caret-position="-911">
+          <caret line="38" column="23" lean-forward="false" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/test/GetJsonInterfaceInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+        <state relative-caret-position="95">
+          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/test/JsonServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-221">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/test/ServerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/bean/BaseFlightInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-963">
-          <caret line="198" column="31" lean-forward="false" selection-start-line="198" selection-start-column="31" selection-end-line="198" selection-end-column="31" />
+        <state relative-caret-position="1275">
+          <caret line="323" column="18" lean-forward="false" selection-start-line="323" selection-start-column="18" selection-end-line="323" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1483947005000" expanded="true" signature="1289:1312" ph="select * fro... knowledge" />
-            <marker date="1483947005000" expanded="true" signature="2109:2186" ph="select chat_... chat_log" />
-            <marker date="1483947005000" expanded="true" signature="2812:2882" ph="select answe... knowledge_sub" />
-            <marker date="1483947005000" expanded="true" signature="3480:3535" ph="select joke_... joke" />
-            <marker date="1483947005000" expanded="true" signature="4153:4242" ph="insert into chat_log... " />
-            <marker date="1483947005000" expanded="true" signature="4849:4910" ph="insert into knowledge... " />
-            <marker date="1483947005000" expanded="true" signature="5828:5881" ph="select * fro... Flight" />
-            <marker date="1483947005000" expanded="true" signature="7244:7296" ph="select IATAC... CityMap" />
-            <marker date="1483947005000" expanded="true" signature="7938:8001" ph="select * fro... FlightDetail" />
+            <element signature="e#8325#8326#0" expanded="true" />
+            <element signature="e#8360#8361#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/ExtractorWord.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/bean/BaseAirport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        <state relative-caret-position="1020">
+          <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2179#2180#0" expanded="true" />
+            <element signature="e#2224#2225#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-352">
+          <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="49" column="4" lean-forward="false" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2029,7 +1995,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>Gradle : com.minisheep : FlightPro-1.0-SNAPSHOT.war</last-edited>
+          <last-edited>Gradle : com.minisheep : FlightPro-1.0-SNAPSHOT.war (exploded)</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

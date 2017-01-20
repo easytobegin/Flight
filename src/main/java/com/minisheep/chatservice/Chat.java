@@ -8,8 +8,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-import com.minisheep.bean.Flight;
-import com.minisheep.bean.FlightDetail;
+import com.minisheep.bean.BaseFlightInfo;
 
 import com.minisheep.searchflight.SearchFlight;
 import com.minisheep.searchflight.SearchFlightDetail;
@@ -36,15 +35,16 @@ public class Chat {
 	
 	public String responseFlightIdSearch(String flightname,String req){  //回复根据航班号查询,数据库相关信息都在javabean了，要什么取什么
 		SearchFlight search = new SearchFlight();
-		List<Flight> flights = new ArrayList<Flight>();
+		List<BaseFlightInfo> flights = new ArrayList<BaseFlightInfo>();
 		flights = search.searchFlightname(flightname);
 		String finalStr = "";
 		String lastupdateTime = "";
 		String answer = "";
-		for(Flight flight : flights){
+		for(BaseFlightInfo flight : flights){
 			String status = "";
+			System.out.println("状态为:" + flight.getFlightStatus());
 			if(flight.getFlightStatus().equals("ARR")){
-				status = "已经达到";
+				status = "已经到达";
 			}else if(flight.getFlightStatus().equals("DEP")){
 				status = "已起飞";
 			}else{
@@ -66,7 +66,7 @@ public class Chat {
 	}
 
 	public String responseFlightByCityNameSearch(List<String> cityName,String req){
-		List<FlightDetail> flightDetails = new ArrayList<FlightDetail>();
+		List<BaseFlightInfo> baseFlightInfos = new ArrayList<BaseFlightInfo>();
 		String dep = "";
 		String arr = "";
 		String answer = "";
@@ -79,16 +79,17 @@ public class Chat {
 			System.out.println("dep:" + dep + "," + "arr:" + arr);
 		}
 		SearchFlightDetail searchFlightDetail = new SearchFlightDetail();
-		flightDetails = searchFlightDetail.flightDetail(dep, arr);
-		if(flightDetails.size() == 0 && cityName.size() != 0){
+		baseFlightInfos = searchFlightDetail.flightDetail(dep, arr);
+		if(baseFlightInfos.size() == 0 && cityName.size() != 0){
 			System.out.println("没有此航班的动态信息!");
 			//break;
 			answer += "没有此航班的动态信息!";
 		}
-		for(FlightDetail detail : flightDetails){
-			String finalstr = "航班号:" + detail.getFlightId() + "\n" + "预计起飞时间:" + detail.getScheduleDepartureTime() + "\n" + "预计到达时间:"
-					+ detail.getScheduleArrivalTime() + "\n" + "实际起飞时间:" + detail.getActualDepartureTime() + "\n" +
-					"实际到达时间:" + detail.getActualArrivalTime() + "\n" + "最后刷新时间:" + detail.getLastUpdated();
+		for(BaseFlightInfo detail : baseFlightInfos){
+
+			String finalstr = "航班号:" + detail.getFlightId() + "\n" + "预计起飞时间:" + detail.getScheduleTime() + "\n" + "评估起飞时间:" + detail.getEstimateTime()
+					 + "\n" + "实际起飞时间:" + detail.getActualTime() + "\n" +
+					"\n" + "最后刷新时间:" + detail.getLastUpdated();
 //			System.out.println(finalstr);
 //			System.out.println("------------------------------");
 			answer += finalstr + "\n" + "------------------------------" + "\n";

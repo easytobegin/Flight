@@ -3,7 +3,7 @@ package com.minisheep.searchflight;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.minisheep.bean.FlightDetail;
+import com.minisheep.bean.BaseFlightInfo;
 import com.minisheep.util.MysqlUtil;
 
 /**
@@ -11,9 +11,9 @@ import com.minisheep.util.MysqlUtil;
  */
 
 public class SearchFlightDetail {
-	public List<FlightDetail> flightDetail(String depCity,String arrCity){
-		List<FlightDetail> flightDetails = new ArrayList<FlightDetail>();
-		flightDetails = MysqlUtil.depCityAndarrCity(depCity, arrCity);
-		return flightDetails;
+	public List<BaseFlightInfo> flightDetail(String depCity, String arrCity){
+		List<BaseFlightInfo> baseFlightInfos = new ArrayList<BaseFlightInfo>();
+		baseFlightInfos = MysqlUtil.depCityAndarrCity(depCity, arrCity);
+		return baseFlightInfos;
 	}
 }
