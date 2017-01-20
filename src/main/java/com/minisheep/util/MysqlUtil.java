@@ -209,7 +209,7 @@ public class MysqlUtil {
 	}
 	
 	/*
-	 * 根据飞机航班编号返回列表
+	 * 根据飞机航班编号返回列表,需要在此处set要get的信息，否则会为null
 	 */
 	public static List<BaseFlightInfo> flightSearch(String carrier,String flightname){   //根据飞机航班编号返回列表
 		String systemdate = ToolsUtil.getSystemDate();  //系统日期
@@ -250,7 +250,10 @@ public class MysqlUtil {
 				//baseFlightInfo.setActualArrivalTime(rs.getString("ACTUALARRIVALTIME")); //实际到达时间
 				flight.setLastUpdated(rs.getString("lastupdated"));  //最后更新时间
 				flight.setFlightStatus(rs.getString("flightstatus"));
-
+				flight.setOrigin(rs.getString("origin"));
+				flight.setPassby(rs.getString("passby"));
+				flight.setDestination(rs.getString("destination"));
+				System.out.println("flightstatus:" + rs.getString("flightstatus"));
 //				flight.setScheduleTime(rs.getString("SCHEDULETIME"));
 //				flight.setActualTime(rs.getString("ACTUALTIME"));
 //				flight.setFlightStatus(rs.getString("FLIGHTSTATUS"));
@@ -292,7 +295,34 @@ public class MysqlUtil {
 		}
 		return "";
 	}
-	
+
+	/*
+		根据英文简写返回中文机场名
+	 */
+	public static String CNNamebyIataCodeSearch(String iataCode){
+		String searchsql = "select displaycnname from base_airport where iatacode = ?";
+		MysqlUtil mysqlUtil = new MysqlUtil();
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		conn = mysqlUtil.getConnectionFlight();
+		try {
+			ps = (PreparedStatement) conn.prepareStatement(searchsql);
+			ps.setString(1, iataCode);
+			rs = ps.executeQuery();
+			if(rs.next()){
+				return rs.getString("displaycnname");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			mysqlUtil.closeConnection(conn, ps, rs);
+		}
+		return "";
+	}
+
 	/*
 	 * 出发城市名和抵达城市名
 	 */
@@ -327,5 +357,27 @@ public class MysqlUtil {
 			mysqlUtil.closeConnection(conn, ps, rs);
 		}
 		return baseFlightInfos;
+	}
+
+	public static String codeTodescription(String statusCode){
+		String searchsql = "select * from base_flightstatus where statuscode = ?";
+		MysqlUtil mysqlUtil = new MysqlUtil();
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		conn = mysqlUtil.getConnectionFlight();
+		String result = "";
+		try {
+			ps = (PreparedStatement) conn.prepareStatement(searchsql);
+			ps.setString(1, statusCode);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				result = rs.getString("description");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		//System.out.println("飞机目前的状态为:" + result);
+		return result;
 	}
 }

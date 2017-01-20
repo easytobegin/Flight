@@ -42,16 +42,28 @@ public class Chat {
 		String answer = "";
 		for(BaseFlightInfo flight : flights){
 			String status = "";
-			System.out.println("状态为:" + flight.getFlightStatus());
-			if(flight.getFlightStatus().equals("ARR")){
-				status = "已经到达";
-			}else if(flight.getFlightStatus().equals("DEP")){
-				status = "已起飞";
-			}else{
-				status = flight.getFlightStatus();
+			//System.out.println("代号:" + flight.getFlightStatus());
+			//System.out.println("状态为:" + MysqlUtil.codeTodescription(flight.getFlightStatus()));
+			status = MysqlUtil.codeTodescription(flight.getFlightStatus());
+
+			String passby = "";
+			passby = MysqlUtil.CNNamebyIataCodeSearch(flight.getPassby());
+			if(passby.equals("")){
+				passby = "无";
 			}
-			finalStr = "航班号:" + flight.getCarrier()  + flight.getFlight() + "\n" + "预计起飞时间:" + flight.getScheduleTime() + "\n" + "实际起飞时间:" + flight.getActualTime() + "\n" +  "航班状态:" + status;
-			lastupdateTime = "最后一次更新时间为:" + flight.getLastUpdated();
+			if(status.equals("")){
+				status = "无";
+			}
+			if(status.equals("到达")){
+				finalStr = "机型编号:" + flight.getCarrier()  + flight.getFlight() + "\n" + "始发:" + MysqlUtil.CNNamebyIataCodeSearch(flight.getOrigin()) + ",终点:" + MysqlUtil.CNNamebyIataCodeSearch(flight.getDestination()) + ",经停:" + passby + "\n" + "计划到达时间:" + flight.getScheduleTime() + "\n" + "预计到达时间:" + flight.getEstimateTime() + "\n"+ "实际达到时间:" + flight.getActualTime() + "\n" +  "航班状态:" + status;
+				lastupdateTime = "最后一次更新时间为:" + flight.getLastUpdated();
+			}else if(status.equals("起飞")){
+				finalStr = "机型编号:" + flight.getCarrier()  + flight.getFlight() + "\n"  + flight.getFlight() + "\n" + "始发:" + MysqlUtil.CNNamebyIataCodeSearch(flight.getOrigin()) + ",终点:" + MysqlUtil.CNNamebyIataCodeSearch(flight.getDestination()) + ",经停:" + passby + "\n" + "计划起飞时间:" + flight.getScheduleTime() + "\n" + "预计起飞时间:" + flight.getEstimateTime() + "\n"+ "实际起飞时间:" + flight.getActualTime() + "\n" +  "航班状态:" + status;
+				lastupdateTime = "最后一次更新时间为:" + flight.getLastUpdated();
+			}else{  //不属于以上情况
+				finalStr = "机型编号:" + flight.getCarrier() + flight.getFlight() + "\n" + flight.getFlight() + "\n" + "始发:" + MysqlUtil.CNNamebyIataCodeSearch(flight.getOrigin()) + ",终点:" + MysqlUtil.CNNamebyIataCodeSearch(flight.getDestination()) + ",经停:" + passby + "\n" + "计划时间:" + flight.getScheduleTime() + "\n" + "航班状态:" + status;
+				lastupdateTime = "最后一次更新时间为:" + flight.getLastUpdated();
+			}
 //			System.out.println(finalStr);
 //			System.out.println(lastupdateTime);
 //			System.out.println();
@@ -60,7 +72,7 @@ public class Chat {
 			Date now = new Date();
 			String createTime = this.format.format(now);
 			int chatCategory = 6; //航班查询
-			MysqlUtil.saveChatLog(openId, createTime, req, finalStr+lastupdateTime, chatCategory);
+			MysqlUtil.saveChatLog(openId, createTime, req, answer, chatCategory);
 		}
 		return answer;
 	}
@@ -94,6 +106,11 @@ public class Chat {
 //			System.out.println("------------------------------");
 			answer += finalstr + "\n" + "------------------------------" + "\n";
 		}
+		String openId = "guest";
+		Date now = new Date();
+		String createTime = this.format.format(now);
+		int chatCategory = 6; //航班查询
+		MysqlUtil.saveChatLog(openId, createTime, req, answer, chatCategory);
 		return answer;
 	}
 
