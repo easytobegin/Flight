@@ -71,7 +71,7 @@ public class SynonymUtil {
     }
 
     public static void main(String[] args) {
-        String indexPath = "D:\\search\\test";
+        String indexPath = "/Users/minisheep/Documents/testindex";
         String input = "超级";
         System.out.println("**********************");
         try {
