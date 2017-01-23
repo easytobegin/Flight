@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 import com.minisheep.bean.BaseFlightInfo;
 
+import com.minisheep.bean.Knowledge;
 import com.minisheep.searchflight.SearchFlight;
 import com.minisheep.searchflight.SearchFlightDetail;
 import com.minisheep.searchflight.SearchIATACodeByCNName;
@@ -31,7 +32,23 @@ public class Chat {
 		//System.out.println(answer);
 		return answer;
 	}
-	
+
+
+	//分词，并返回分词后的结果
+	public String[] cutWordsResult(String question) throws IOException {
+		String result = Service.cutWords(question);  //分词结果
+
+		String[] str = result.split("\\|");  //根据分词结果判断用户是否是要查询航班动态?
+		return str;
+	}
+
+
+	public int FlightCategoryCode(String[] cutWordResult) throws IOException {  //根据问题回复航班分类，推荐相应答案
+		for(int i=0;i<cutWordResult.length;i++){
+
+		}
+		return 0;
+	}
 	
 	public String responseFlightIdSearch(String flightname,String req){  //回复根据航班号查询,数据库相关信息都在javabean了，要什么取什么
 		SearchFlight search = new SearchFlight();
@@ -55,7 +72,7 @@ public class Chat {
 				status = "无";
 			}
 			if(status.equals("到达")){
-				finalStr = "机型编号:" + flight.getCarrier()  + flight.getFlight() + "\n" + "始发:" + MysqlUtil.CNNamebyIataCodeSearch(flight.getOrigin()) + ",终点:" + MysqlUtil.CNNamebyIataCodeSearch(flight.getDestination()) + ",经停:" + passby + "\n" + "计划到达时间:" + flight.getScheduleTime() + "\n" + "预计到达时间:" + flight.getEstimateTime() + "\n"+ "实际达到时间:" + flight.getActualTime() + "\n" +  "航班状态:" + status;
+				finalStr = "机型编号:" + flight.getCarrier()  + flight.getFlight() + "\n" + "始发:" + MysqlUtil.CNNamebyIataCodeSearch(flight.getOrigin()) + ",终点:" + MysqlUtil.CNNamebyIataCodeSearch(flight.getDestination()) + ",经停:" + passby + "\n" + "计划到达时间:" + flight.getScheduleTime() + "\n" + "预计到达时间:" + flight.getEstimateTime() + "\n"+ "实际到达时间:" + flight.getActualTime() + "\n" +  "航班状态:" + status;
 				lastupdateTime = "最后一次更新时间为:" + flight.getLastUpdated();
 			}else if(status.equals("起飞")){
 				finalStr = "机型编号:" + flight.getCarrier()  + flight.getFlight() + "\n"  + flight.getFlight() + "\n" + "始发:" + MysqlUtil.CNNamebyIataCodeSearch(flight.getOrigin()) + ",终点:" + MysqlUtil.CNNamebyIataCodeSearch(flight.getDestination()) + ",经停:" + passby + "\n" + "计划起飞时间:" + flight.getScheduleTime() + "\n" + "预计起飞时间:" + flight.getEstimateTime() + "\n"+ "实际起飞时间:" + flight.getActualTime() + "\n" +  "航班状态:" + status;
@@ -99,8 +116,20 @@ public class Chat {
 		}
 		for(BaseFlightInfo detail : baseFlightInfos){
 
-			String finalstr = "航班号:" + detail.getFlightId() + "\n" + "预计起飞时间:" + detail.getScheduleTime() + "\n" + "评估起飞时间:" + detail.getEstimateTime()
-					 + "\n" + "实际起飞时间:" + detail.getActualTime() + "\n" +
+			String passby = "";
+			passby = MysqlUtil.CNNamebyIataCodeSearch(detail.getPassby());
+			if(passby.equals("")){
+				passby = "无";
+			}
+
+			String status = "";
+			status = MysqlUtil.codeTodescription(detail.getFlightStatus());
+
+
+			String finalstr = "航班号:" + detail.getCarrier() + detail.getFlight() + "\n" +
+					"始发:" + detail.getOrigin() + ",终点:" + detail.getDestination() + ",经停:" + passby + "\n"
+					+ "预计起飞时间:" + detail.getScheduleTime() + "\n" + "评估起飞时间:" + detail.getEstimateTime()
+					 + "\n" + "实际起飞时间:" + detail.getActualTime() + "\n" + "飞机状态:" + status +
 					"\n" + "最后刷新时间:" + detail.getLastUpdated();
 //			System.out.println(finalstr);
 //			System.out.println("------------------------------");
@@ -114,21 +143,13 @@ public class Chat {
 		return answer;
 	}
 
-	public String getAnswer(String question){
+	public String getAnswer(String question) throws IOException {
 		String openId = "guest";
 		String response = "";
 		List<String> cityname = new ArrayList<String>();
 		String category = "";  //按类别查询不同的数据库
 
-		try {
-			category = Service.cutWords(question);  //切词
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		//System.out.println("分类为:" + category);
-		//System.out.println();
-		String[] names = category.split("\\|");  //根据分词结果判断用户是否是要查询航班动态?
+		String[] names = cutWordsResult(question);
 
 		boolean isFlightSearch = false;
 		for(int i=0;i<names.length;i++){
@@ -178,7 +199,12 @@ public class Chat {
 		Scanner in=new Scanner(System.in);
 		String text = "";
 		while((text = in.next()) != null) {
-			String result = chat.getAnswer(text);
+			String result = null;
+			try {
+				result = chat.getAnswer(text);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			System.out.println(result);
 		}
 	}

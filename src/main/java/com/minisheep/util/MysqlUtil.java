@@ -343,12 +343,17 @@ public class MysqlUtil {
 			while(rs.next()){
 				BaseFlightInfo baseFlightInfo = new BaseFlightInfo();
 				baseFlightInfo.setFlightId(rs.getInt("flightid"));  //FLIGHTID
+				baseFlightInfo.setCarrier(rs.getString("carrier"));
+				baseFlightInfo.setFlight(rs.getString("flight"));
+				baseFlightInfo.setOrigin(rs.getString("origin"));
+				baseFlightInfo.setDestination(rs.getString("destination"));
 				baseFlightInfo.setScheduleTime(rs.getString("scheduletime"));  //计划起飞时间
 				//baseFlightInfo.setScheduleArrivalTime(rs.getString("SCHEDULEARRIVALTIME")); //计划到达时间
 				baseFlightInfo.setEstimateTime(rs.getString("estimatetime"));
 				baseFlightInfo.setActualTime(rs.getString("actualtime")); //实际起飞时间
 				//baseFlightInfo.setActualArrivalTime(rs.getString("ACTUALARRIVALTIME")); //实际到达时间
 				baseFlightInfo.setLastUpdated(rs.getString("lastupdated"));  //最后更新时间
+				baseFlightInfo.setFlightStatus(rs.getString("flightstatus"));
 				baseFlightInfos.add(baseFlightInfo);
 			}
 		}catch (Exception e) {
