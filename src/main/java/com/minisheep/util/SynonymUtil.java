@@ -39,10 +39,11 @@ public class SynonymUtil {
         Version ver = Version.LUCENE_46;
         Map<String, String> filterArgs = new HashMap<String, String>();
         filterArgs.put("luceneMatchVersion", ver.toString());
-        filterArgs.put("synonyms", "config/synonyms.txt");
+        filterArgs.put("synonyms", "/Users/minisheep/Documents/synonym.txt");
         filterArgs.put("expand", "true");
         SynonymFilterFactory factory = new SynonymFilterFactory(filterArgs);
-        factory.inform(new FilesystemResourceLoader());
+        FilesystemResourceLoader loader = new FilesystemResourceLoader();
+        factory.inform(loader);
         Analyzer whitespaceAnalyzer = new WhitespaceAnalyzer(ver);
         TokenStream ts = factory.create(whitespaceAnalyzer.tokenStream("someField", input));
         return ts;
@@ -72,11 +73,12 @@ public class SynonymUtil {
 
     public static void main(String[] args) {
         String indexPath = "/Users/minisheep/Documents/testindex";
-        String input = "超级";
+        String input = "电脑";
         System.out.println("**********************");
         try {
             String result = displayTokens(convertSynonym(analyzerChinese(input, true)));
-//			MyIndexer.createIndex(indexPath);
+			//CreateIndex.createIndex(indexPath);
+            System.out.println("result:"+ result);
             List<String> docs = MySearch.searchIndex(result, indexPath);
             for (String string : docs) {
                 System.out.println(string);
