@@ -128,13 +128,25 @@ public class Chat {
 		List<BaseFlightInfo> flights = new ArrayList<BaseFlightInfo>();
 		flights = search.searchFlightname(FlightCode);
 		if(!FlightCode.equals("")&& FlightCode != null){  //问哪里到哪里的问题
-			for(BaseFlightInfo flight : flights) {
-				if(questionCategory.equals("实际起飞") && MysqlUtil.codeTodescription(flight.getFlightStatus()).equals("起飞")){
+			for(BaseFlightInfo flight : flights) {   //这里要通过direction判断,是进港还是出港
+				if(questionCategory.equals("实际起飞") && flight.getDirection().equals("D")){
 					System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 实际起飞时间为:" + flight.getActualTime());
-				}else if(questionCategory.equals("实际抵达") && MysqlUtil.codeTodescription(flight.getFlightStatus()).equals("到达")){
+				}else if(questionCategory.equals("实际抵达") && flight.getDirection().equals("A")){
 					System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 实际到达时间为:" + flight.getActualTime());
-				}else{   //该航班的所有信息?预留
-
+				}else if(questionCategory.equals("预计抵达") && flight.getDirection().equals("A")){
+					if(flight.getEstimateTime() == null){
+						System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计抵达时间为:" + flight.getScheduleTime());
+					}else{
+						System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计到达时间为:" + flight.getEstimateTime());
+					}
+				}else if(questionCategory.equals("预计起飞") && flight.getDirection().equals("D")){
+					if(flight.getEstimateTime() == null){
+						System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计起飞时间为:" + flight.getScheduleTime());
+					}else{
+						System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计起飞时间为:" + flight.getEstimateTime());
+					}
+				}else{   //该航班的所有信息? 预留
+					//System.out.println("暂无" + detail.getCarrier()  + detail.getFlight() + "航班的"+questionCategory+"信息,请稍后再试!!!");
 				}
 			}
 		}
@@ -167,13 +179,25 @@ public class Chat {
 			answer += "没有此航班的动态信息!";
 			System.out.println("没有此航班的动态信息!");
 		}
-		for(BaseFlightInfo detail : baseFlightInfos){
-			if(questionCategory.equals("实际起飞") && MysqlUtil.codeTodescription(detail.getFlightStatus()).equals("起飞")){
+		for(BaseFlightInfo detail : baseFlightInfos){  //这里重构的时候写成函数
+			if(questionCategory.equals("实际起飞") && detail.getDirection().equals("D")){
 				System.out.println("航班号:" + detail.getCarrier()  + detail.getFlight() + " 实际起飞时间为:" + detail.getActualTime());
-			}else if(questionCategory.equals("实际抵达") && MysqlUtil.codeTodescription(detail.getFlightStatus()).equals("到达")){
+			}else if(questionCategory.equals("实际抵达") && detail.getDirection().equals("A")){
 				System.out.println("航班号:" + detail.getCarrier()  + detail.getFlight() + " 实际到达时间为:" + detail.getActualTime());
-			}else{   //该航班的所有信息?预留
-				System.out.println("暂无" + detail.getCarrier()  + detail.getFlight() + "航班的"+questionCategory+"信息,请稍后再试!!!");
+			}else if(questionCategory.equals("预计抵达") && detail.getDirection().equals("A")){
+				if(detail.getEstimateTime() == null){
+					System.out.println("航班号:" + detail.getCarrier()  + detail.getFlight() + " 预计抵达时间为:" + detail.getScheduleTime());
+				}else{
+					System.out.println("航班号:" + detail.getCarrier()  + detail.getFlight() + " 预计到达时间为:" + detail.getEstimateTime());
+				}
+			}else if(questionCategory.equals("预计起飞") && detail.getDirection().equals("D")){
+				if(detail.getEstimateTime() == null){
+					System.out.println("航班号:" + detail.getCarrier()  + detail.getFlight() + " 预计起飞时间为:" + detail.getScheduleTime());
+				}else{
+					System.out.println("航班号:" + detail.getCarrier()  + detail.getFlight() + " 预计起飞时间为:" + detail.getEstimateTime());
+				}
+			}else{   //该航班的所有信息? 预留
+				//System.out.println("暂无" + detail.getCarrier()  + detail.getFlight() + "航班的"+questionCategory+"信息,请稍后再试!!!");
 			}
 		}
 		System.out.println("------------------------------------------------");

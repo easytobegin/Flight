@@ -41,6 +41,8 @@ public class CreateIndex {
         Document document4 = new Document();
         document4.add(new TextField("title", "预计起飞", Field.Store.YES));
         indexWriter.addDocument(document4);
+
+
         indexWriter.close();
     }
 }
