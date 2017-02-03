@@ -9,6 +9,7 @@ import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
+import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
@@ -33,6 +34,7 @@ public class MySearch {
         QueryParser queryParser = new QueryParser(Version.LUCENE_46,"title",analyzer);
         Query query = queryParser.parse(keyword);
         TopDocs td = indexSearcher.search(query, 10);
+        ScoreDoc[] scoreDocs = td.scoreDocs;
         for (int i = 0; i < td.totalHits; i++) {
             Document document = indexSearcher.doc(td.scoreDocs[i].doc);
             result.add(document.get("title"));

@@ -14,8 +14,11 @@ import com.minisheep.bean.Knowledge;
 import com.minisheep.searchflight.SearchFlight;
 import com.minisheep.searchflight.SearchFlightDetail;
 import com.minisheep.searchflight.SearchIATACodeByCNName;
+import com.minisheep.util.MySearch;
 import com.minisheep.util.MysqlUtil;
+import com.minisheep.util.SynonymUtil;
 import com.minisheep.util.ToolsUtil;
+import org.apache.lucene.queryparser.classic.ParseException;
 
 /**
  * Created by minisheep on 16/12/28.
@@ -49,7 +52,7 @@ public class Chat {
 		}
 		return 0;
 	}
-	
+
 	public String responseFlightIdSearch(String flightname,String req){  //回复根据航班号查询,数据库相关信息都在javabean了，要什么取什么
 		SearchFlight search = new SearchFlight();
 		List<BaseFlightInfo> flights = new ArrayList<BaseFlightInfo>();
@@ -94,6 +97,92 @@ public class Chat {
 		return answer;
 	}
 
+	public static String changeMulToOne(String originRequest){  //把多种问法通过预处理变成统一的一种格式,再去查询
+		String resultQuestion = ""; //最后统一的格式
+		try {
+			String indexPath = "/Users/minisheep/Documents/testindex";
+			String result = SynonymUtil.displayTokens(SynonymUtil.convertSynonym(SynonymUtil.analyzerChinese(originRequest, true)));
+			System.out.println("result:"+ result);
+			List<String> docs = MySearch.searchIndex(result, indexPath);
+			for (String string : docs) {
+				//这个可以获取结果:比如厦门到沈阳的飞机何时起飞(所有跟起飞有关的同义词可归为此类,并且厦门到沈阳可以动态改变,其他不变)
+				System.out.println(string);
+				resultQuestion = string;
+				break;
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		System.out.println("问题处理后的结果为:" + resultQuestion);
+		return resultQuestion;
+	}
+
+	/*
+		问题归一化后根据航班号数据库查询返回结果，考虑用户点击更多该航班动态的时候显示全部该航班的内容
+		给出用户需要的部分信息
+	*/
+	public String dealWithFlightCodeQuestion(String FlightCode,String questionCategory){
+		SearchFlight search = new SearchFlight();
+		List<BaseFlightInfo> flights = new ArrayList<BaseFlightInfo>();
+		flights = search.searchFlightname(FlightCode);
+		if(!FlightCode.equals("")&& FlightCode != null){  //问哪里到哪里的问题
+			for(BaseFlightInfo flight : flights) {
+				if(questionCategory.equals("实际起飞") && MysqlUtil.codeTodescription(flight.getFlightStatus()).equals("起飞")){
+					System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 实际起飞时间为:" + flight.getActualTime());
+				}else if(questionCategory.equals("实际抵达") && MysqlUtil.codeTodescription(flight.getFlightStatus()).equals("到达")){
+					System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 实际到达时间为:" + flight.getActualTime());
+				}else{   //该航班的所有信息?预留
+
+				}
+			}
+		}
+		System.out.println("----------------------------------------");
+		return "";
+	}
+
+	/*
+		问题归一化后根据出发城市和到达城市数据库查询返回结果
+		给出部分用户需要的信息
+	 */
+	public String delWithFlightCityQuestion(List<String> cityName,String questionCategory){
+		List<BaseFlightInfo> baseFlightInfos = new ArrayList<BaseFlightInfo>();
+		String dep = "";
+		String arr = "";
+		String answer = "";
+		if(cityName.size() == 1){
+			dep = cityName.get(0);
+			System.out.println("dep:" + dep + "," + "arr:" + arr);
+		}else if(cityName.size() == 2){
+			dep = cityName.get(0);
+			arr = cityName.get(1);
+			System.out.println("dep:" + dep + "," + "arr:" + arr);
+		}
+		SearchFlightDetail searchFlightDetail = new SearchFlightDetail();
+		baseFlightInfos = searchFlightDetail.flightDetail(dep, arr);
+		if(baseFlightInfos.size() == 0 && cityName.size() != 0){
+			System.out.println("没有此航班的动态信息!");
+			//break;
+			answer += "没有此航班的动态信息!";
+			System.out.println("没有此航班的动态信息!");
+		}
+		for(BaseFlightInfo detail : baseFlightInfos){
+			if(questionCategory.equals("实际起飞") && MysqlUtil.codeTodescription(detail.getFlightStatus()).equals("起飞")){
+				System.out.println("航班号:" + detail.getCarrier()  + detail.getFlight() + " 实际起飞时间为:" + detail.getActualTime());
+			}else if(questionCategory.equals("实际抵达") && MysqlUtil.codeTodescription(detail.getFlightStatus()).equals("到达")){
+				System.out.println("航班号:" + detail.getCarrier()  + detail.getFlight() + " 实际到达时间为:" + detail.getActualTime());
+			}else{   //该航班的所有信息?预留
+				System.out.println("暂无" + detail.getCarrier()  + detail.getFlight() + "航班的"+questionCategory+"信息,请稍后再试!!!");
+			}
+		}
+		System.out.println("------------------------------------------------");
+		return answer;
+	}
+
+	/*
+		给出全部信息
+	 */
 	public String responseFlightByCityNameSearch(List<String> cityName,String req){
 		List<BaseFlightInfo> baseFlightInfos = new ArrayList<BaseFlightInfo>();
 		String dep = "";
@@ -144,6 +233,7 @@ public class Chat {
 	}
 
 	public String getAnswer(String question) throws IOException {
+		String afterDeal = changeMulToOne(question);
 		String openId = "guest";
 		String response = "";
 		List<String> cityname = new ArrayList<String>();
@@ -171,6 +261,7 @@ public class Chat {
 			for(int i=0;i<names.length;i++){
 				if(ToolsUtil.RegexFlightId(names[i]) == true){
 					flightIdName = ToolsUtil.lowerToupper(names[i]);
+					dealWithFlightCodeQuestion(flightIdName,afterDeal);
 					//System.out.println("变成大写后的FlightId:" + flightIdName);
 					response = chat.responseFlightIdSearch(flightIdName,question);  //航班号做回答,如果没有数据就继续往下查找别的数据库等
 				}
@@ -184,6 +275,7 @@ public class Chat {
 					cityname.add(result);
 				}
 			}
+			delWithFlightCityQuestion(cityname,afterDeal);
 			response = chat.responseFlightByCityNameSearch(cityname,question);
 		}
 		if(response.equals("") && cityname.size() == 0){   //普通静态的数据库
@@ -193,12 +285,13 @@ public class Chat {
 	}
 
 	public static void main(String[] args){
-		Service.createIndex();
+		//Service.createIndex();  //建立索引,建立一次就够了
 		System.out.println("您好阿,我是智能机器人,请问有什么可以帮您?");
 		Chat chat = new Chat();
 		Scanner in=new Scanner(System.in);
 		String text = "";
 		while((text = in.next()) != null) {
+
 			String result = null;
 			try {
 				result = chat.getAnswer(text);

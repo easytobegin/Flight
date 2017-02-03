@@ -20,6 +20,12 @@ import java.util.Map;
 /**
  * Created by minisheep on 17/1/23.
  */
+
+/*
+    同义词
+ */
+
+
 public class SynonymUtil {
     public static String analyzerChinese(String input,boolean userSmart) throws IOException{
         StringBuffer sb = new StringBuffer();
@@ -63,7 +69,7 @@ public class SynonymUtil {
             String token = termAttr.toString();
             sb.append(token).append(" ");
             System.out.print(token+"|");
-//            System.out.print(offsetAttribute.startOffset() + "-" + offsetAttribute.endOffset() + "[" + token + "] ");
+//          System.out.print(offsetAttribute.startOffset() + "-" + offsetAttribute.endOffset() + "[" + token + "] ");
         }
         System.out.println();
         ts.end();
@@ -73,14 +79,15 @@ public class SynonymUtil {
 
     public static void main(String[] args) {
         String indexPath = "/Users/minisheep/Documents/testindex";
-        String input = "电脑";
+        String input = "厦门到沈阳的飞机什么时候能飞离?";
         System.out.println("**********************");
         try {
             String result = displayTokens(convertSynonym(analyzerChinese(input, true)));
-			//CreateIndex.createIndex(indexPath);
+			CreateIndex.createIndex(indexPath);  //建立索引
             System.out.println("result:"+ result);
             List<String> docs = MySearch.searchIndex(result, indexPath);
             for (String string : docs) {
+                //这个可以获取结果:比如厦门到沈阳的飞机何时起飞(所有跟起飞有关的同义词可归为此类,并且厦门到沈阳可以动态改变,其他不变)
                 System.out.println(string);
             }
         } catch (IOException e) {
@@ -91,7 +98,5 @@ public class SynonymUtil {
             e.printStackTrace();
         }
     }
-
-
 }
 
