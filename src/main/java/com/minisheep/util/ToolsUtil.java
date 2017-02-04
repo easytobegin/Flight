@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 public class ToolsUtil {
 	public static String getSystemDate(){
 		String systemdate = "";
-		SimpleDateFormat myFmt1=new SimpleDateFormat("yy/MM/dd"); 
+		SimpleDateFormat myFmt1=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date now=new Date();
 		//System.out.println(myFmt1.format(now));
 		systemdate = myFmt1.format(now);
