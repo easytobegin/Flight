@@ -40,4 +40,11 @@ public class ToolsUtil {
 		}
 		return str1.toString();
 	}
+
+	public static String removeDotZero(String str){
+		//System.out.println("length:" + str.length());
+		//System.out.println("打印结果为:"+str.substring(1,str.length()-2));
+		return str.substring(0,str.length()-2);
+		//return null;
+	}
 }

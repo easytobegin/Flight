@@ -207,7 +207,7 @@ public class MysqlUtil {
 			mysqlUtil.closeConnection(conn, ps, rs);
 		}
 	}
-	
+
 	/*
 	 * 根据飞机航班编号返回列表,需要在此处set要get的信息，否则会为null
 	 */
@@ -243,18 +243,29 @@ public class MysqlUtil {
 				 * 
 				 * flight.getScheduleTime() + ",实际起飞时间:" + flight.getActualTime() + ",航班状态:" + status;
 				 */
-				flight.setScheduleTime(rs.getString("scheduletime"));  //计划起飞时间
-				//baseFlightInfo.setScheduleArrivalTime(rs.getString("SCHEDULEARRIVALTIME")); //计划到达时间
-				flight.setEstimateTime(rs.getString("estimatetime"));
-				flight.setActualTime(rs.getString("actualtime")); //实际起飞时间
+				if(rs.getString("actualtime") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("actualtime"));
+					flight.setActualTime(afterDeal); //实际起飞时间
+				}
+				if(rs.getString("estimatetime") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("estimatetime"));
+					flight.setEstimateTime(afterDeal);
+				}
+				if(rs.getString("scheduletime") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("scheduletime"));
+					flight.setScheduleTime(afterDeal);
+				}
+				if(rs.getString("lastupdated") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("lastupdated"));
+					flight.setLastUpdated(afterDeal); //实际起飞时间
+				}
 				//baseFlightInfo.setActualArrivalTime(rs.getString("ACTUALARRIVALTIME")); //实际到达时间
-				flight.setLastUpdated(rs.getString("lastupdated"));  //最后更新时间
 				flight.setFlightStatus(rs.getString("flightstatus"));
 				flight.setOrigin(rs.getString("origin"));
 				flight.setPassby(rs.getString("passby"));
 				flight.setDestination(rs.getString("destination"));
 				flight.setDirection(rs.getString("direction"));
-				System.out.println("flightstatus:" + rs.getString("flightstatus"));
+//				System.out.println("flightstatus:" + rs.getString("flightstatus"));
 //				flight.setScheduleTime(rs.getString("SCHEDULETIME"));
 //				flight.setActualTime(rs.getString("ACTUALTIME"));
 //				flight.setFlightStatus(rs.getString("FLIGHTSTATUS"));
@@ -343,17 +354,35 @@ public class MysqlUtil {
 			rs = ps.executeQuery();
 			while(rs.next()){
 				BaseFlightInfo baseFlightInfo = new BaseFlightInfo();
+
+				if(rs.getString("actualtime") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("actualtime"));
+					baseFlightInfo.setActualTime(afterDeal); //实际起飞时间
+				}
+				if(rs.getString("estimatetime") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("estimatetime"));
+					baseFlightInfo.setEstimateTime(afterDeal);
+				}
+				if(rs.getString("scheduletime") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("scheduletime"));
+					baseFlightInfo.setScheduleTime(afterDeal);
+				}
+				if(rs.getString("lastupdated") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("lastupdated"));
+					baseFlightInfo.setLastUpdated(afterDeal);
+				}
+
 				baseFlightInfo.setFlightId(rs.getInt("flightid"));  //FLIGHTID
 				baseFlightInfo.setCarrier(rs.getString("carrier"));
 				baseFlightInfo.setFlight(rs.getString("flight"));
 				baseFlightInfo.setOrigin(rs.getString("origin"));
 				baseFlightInfo.setDestination(rs.getString("destination"));
-				baseFlightInfo.setScheduleTime(rs.getString("scheduletime"));  //计划起飞时间
+				//baseFlightInfo.setScheduleTime(rs.getString("scheduletime"));  //计划起飞时间
 				//baseFlightInfo.setScheduleArrivalTime(rs.getString("SCHEDULEARRIVALTIME")); //计划到达时间
-				baseFlightInfo.setEstimateTime(rs.getString("estimatetime"));
-				baseFlightInfo.setActualTime(rs.getString("actualtime")); //实际起飞时间
+				//baseFlightInfo.setEstimateTime(rs.getString("estimatetime"));
+				//baseFlightInfo.setActualTime(rs.getString("actualtime")); //实际起飞时间
 				//baseFlightInfo.setActualArrivalTime(rs.getString("ACTUALARRIVALTIME")); //实际到达时间
-				baseFlightInfo.setLastUpdated(rs.getString("lastupdated"));  //最后更新时间
+				//baseFlightInfo.setLastUpdated(rs.getString("lastupdated"));  //最后更新时间
 				baseFlightInfo.setFlightStatus(rs.getString("flightstatus"));
 				baseFlightInfo.setDirection(rs.getString("direction"));
 				baseFlightInfos.add(baseFlightInfo);

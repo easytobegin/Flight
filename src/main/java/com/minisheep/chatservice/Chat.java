@@ -125,25 +125,32 @@ public class Chat {
 	*/
 	public String dealWithFlightCodeQuestion(String FlightCode,String questionCategory){
 		SearchFlight search = new SearchFlight();
+		String answer = "";
 		List<BaseFlightInfo> flights = new ArrayList<BaseFlightInfo>();
 		flights = search.searchFlightname(FlightCode);
 		if(!FlightCode.equals("")&& FlightCode != null){  //问哪里到哪里的问题
 			for(BaseFlightInfo flight : flights) {   //这里要通过direction判断,是进港还是出港
 				if(questionCategory.equals("实际起飞") && flight.getDirection().equals("D")){
 					System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 实际起飞时间为:" + flight.getActualTime());
+					answer += "航班号:" + flight.getCarrier()  + flight.getFlight() + " 实际起飞时间为:" + flight.getActualTime();
 				}else if(questionCategory.equals("实际抵达") && flight.getDirection().equals("A")){
 					System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 实际到达时间为:" + flight.getActualTime());
+					answer += "航班号:" + flight.getCarrier()  + flight.getFlight() + " 实际到达时间为:" + flight.getActualTime();
 				}else if(questionCategory.equals("预计抵达") && flight.getDirection().equals("A")){
 					if(flight.getEstimateTime() == null){
 						System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计抵达时间为:" + flight.getScheduleTime());
+						answer += "航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计抵达时间为:" + flight.getScheduleTime();
 					}else{
 						System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计到达时间为:" + flight.getEstimateTime());
+						answer += "航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计到达时间为:" + flight.getEstimateTime();
 					}
 				}else if(questionCategory.equals("预计起飞") && flight.getDirection().equals("D")){
 					if(flight.getEstimateTime() == null){
 						System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计起飞时间为:" + flight.getScheduleTime());
+						answer += "航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计起飞时间为:" + flight.getScheduleTime();
 					}else{
 						System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计起飞时间为:" + flight.getEstimateTime());
+						answer += "航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计起飞时间为:" + flight.getEstimateTime();
 					}
 				}else{   //该航班的所有信息? 预留
 					//System.out.println("暂无" + detail.getCarrier()  + detail.getFlight() + "航班的"+questionCategory+"信息,请稍后再试!!!");
@@ -151,7 +158,7 @@ public class Chat {
 			}
 		}
 		System.out.println("----------------------------------------");
-		return "";
+		return answer;
 	}
 
 	/*
