@@ -187,28 +187,26 @@ public class Chat {
                 }
                 //answer += "找不到该航班抵达的相关信息,您是否需要查询的是查询该航班的起飞相关信息?";
             }else if(questionCategory.equals("登机口")){
-                for (BaseFlightInfo flight : flights) {   //这里要通过direction判断,是进港还是出港
-                    String time = ""; //起飞时间
-                    if(flight.getActualTime() != null){
-                        time = flight.getActualTime();
-                    }else if(flight.getEstimateTime() != null){
-                        time = flight.getEstimateTime();
-                    }else{
-                        time = flight.getScheduleTime();
-                    }
-                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 登机口为:" + flight.getGate() + ",该航班的起飞时间为:" + time  + "\n";
+                for (BaseFlightInfo flight : flights) {
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 登机口为:" + flight.getGate() + "  信息最后更新时间为:" + flight.getLastUpdated()  + "\n";
                 }
             }else if(questionCategory.equals("候机楼")){
-                for (BaseFlightInfo flight : flights) {   //这里要通过direction判断,是进港还是出港
-                    String time = ""; //起飞时间
-                    if(flight.getActualTime() != null){
-                        time = flight.getActualTime();
-                    }else if(flight.getEstimateTime() != null){
-                        time = flight.getEstimateTime();
+                for (BaseFlightInfo flight : flights) {
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 您的所查询航班的航站楼为:" + flight.getTerminal() + "航站楼" + "  信息最后更新时间为:" + flight.getLastUpdated() + "\n";
+                }
+            }else if(questionCategory.equals("状态")){
+                for(BaseFlightInfo flight : flights){
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 您所查询航班的当前状态为:" + MysqlUtil.codeTodescription(flight.getFlightStatus()) + "  信息最后更新时间为:" + flight.getLastUpdated() + "\n";
+                }
+            }else if(questionCategory.equals("检票口")){
+                for(BaseFlightInfo flight : flights){
+                    String checkinCounter = "";
+                    if(flight.getCheckinCounter() == null){
+                        checkinCounter = "任意";
                     }else{
-                        time = flight.getScheduleTime();
+                        checkinCounter = flight.getCheckinCounter();
                     }
-                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 您的所查询航班的航站楼为:" + flight.getTerminal() + "航站楼" + ",该航班的起飞时间为:" + time + "\n";
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 该航班在 " + checkinCounter + " 检票口检票" + "  信息最后更新时间为:" + flight.getLastUpdated() + "\n";
                 }
             }
         }
@@ -417,8 +415,7 @@ public class Chat {
         Scanner in = new Scanner(System.in);
         String text = "";
         while ((text = in.next()) != null) {
-
-            String result = null;
+            String result = "";
             try {
                 result = chat.getAnswer(text);
             } catch (IOException e) {

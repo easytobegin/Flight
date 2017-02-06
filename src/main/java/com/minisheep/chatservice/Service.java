@@ -48,12 +48,6 @@ public class Service {
 		return finalStr;
 	}
 
-	/*
-		比如 厦门到长春的航班的机型编号 搜索
-	 */
-	public static void createIndexAboutFlight(){  //建立航班知识库的索引,同理可以建立酒店等知识库的索引
-
-	}
 
 	public static void createIndex(){   //建立知识库的索引
 		List<Knowledge> knowledges = MysqlUtil.findAllKownLedge();

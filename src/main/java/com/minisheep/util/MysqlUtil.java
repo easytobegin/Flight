@@ -267,11 +267,8 @@ public class MysqlUtil {
 				flight.setDirection(rs.getString("direction"));
 				flight.setGate(rs.getString("gate")); //登机口
 				flight.setTerminal(rs.getString("terminal")); //候机楼
-//				System.out.println("flightstatus:" + rs.getString("flightstatus"));
-//				flight.setScheduleTime(rs.getString("SCHEDULETIME"));
-//				flight.setActualTime(rs.getString("ACTUALTIME"));
-//				flight.setFlightStatus(rs.getString("FLIGHTSTATUS"));
-//				flight.setLastUpdated(rs.getString("LASTUPDATED"));
+				flight.setFlightStatus(rs.getString("flightstatus"));  //航班状态
+				flight.setCheckinCounter(rs.getString("checkincounter")); //检票口
 				flights.add(flight);
 			}
 		}catch (Exception e) {
@@ -388,7 +385,9 @@ public class MysqlUtil {
 				baseFlightInfo.setFlightStatus(rs.getString("flightstatus"));
 				baseFlightInfo.setDirection(rs.getString("direction"));
 				baseFlightInfo.setGate(rs.getString("gate")); //登机口
-				baseFlightInfo.setTerminal(rs.getString("terminal"));
+				baseFlightInfo.setTerminal(rs.getString("terminal")); //候机楼
+				baseFlightInfo.setFlightStatus(rs.getString("flightstatus"));  //航班状态
+				baseFlightInfo.setCheckinCounter(rs.getString("checkincounter")); //检票口
 				baseFlightInfos.add(baseFlightInfo);
 			}
 		}catch (Exception e) {

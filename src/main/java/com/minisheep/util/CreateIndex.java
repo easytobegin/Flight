@@ -20,9 +20,9 @@ import java.io.IOException;
 public class CreateIndex {
     public static void createIndex(String indexPath) throws IOException {
         Directory directory = FSDirectory.open(new File(indexPath));
-        Analyzer analyzer = new IKAnalyzer();
+        //Analyzer analyzer = new IKAnalyzer();
 
-//		IKAnalyzer analyzer = new IKAnalyzer();
+		IKAnalyzer analyzer = new IKAnalyzer();
         IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_46, analyzer);
         IndexWriter indexWriter = new IndexWriter(directory, config);
         Document document1 = new Document();
