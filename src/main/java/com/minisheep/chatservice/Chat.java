@@ -208,6 +208,84 @@ public class Chat {
                     }
                     answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 该航班在 " + checkinCounter + " 检票口检票" + "  信息最后更新时间为:" + flight.getLastUpdated() + "\n";
                 }
+            }else if(questionCategory.equals("开始检票时间")){
+                for(BaseFlightInfo flight : flights){
+                    if(flight.getActualCheckinOpen() != null){
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班开始检票时间为:" +
+                                flight.getActualCheckinOpen() + "\n";
+                    }else if(flight.getScheduleCheckinOpen() != null){
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班开始检票时间为:" +
+                                flight.getScheduleCheckinOpen() + "\n";
+                    }else{
+                        answer += "还没有该航班检票开始的时间,请稍后查询!" + "\n";
+                    }
+                }
+            }else if(questionCategory.equals("停止检票时间")){
+                for(BaseFlightInfo flight : flights){
+                    if(flight.getActualCheckinClose() != null){
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班停止检票时间为:" +
+                                flight.getActualCheckinClose() + "\n";
+                    }else if(flight.getScheduleCheckinClose() != null){
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班停止检票时间为:" +
+                                flight.getScheduleCheckinClose() + "\n";
+                    }else{
+                        answer += "还没有该航班检票停止的时间,请稍后查询!" + "\n";
+                    }
+                }
+            }else if (questionCategory.equals("传送带开始")) {
+                for(BaseFlightInfo flight : flights){
+                    if(flight.getCarouselActualOpen() != null){
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  行李传送带开始时间为:"
+                                + flight.getCarouselActualOpen() + "\n";
+                    }else if(flight.getCarouselScheduleOpen() != null){
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  行李传送带开始时间为:"
+                                + flight.getCarouselScheduleOpen() + "\n";
+                    }else{
+                        answer += "暂无该航班行李传送带开始的时间" + "\n";
+                    }
+                }
+            }else if(questionCategory.equals("传送带结束")){
+                for(BaseFlightInfo flight : flights){
+                    if(flight.getCarouselActualClose() != null){
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  行李传送带停止时间为:"
+                                + flight.getCarouselActualClose() + "\n";
+                    }else if(flight.getCarouselScheduleClose() != null){
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  行李传送带停止时间为:"
+                                + flight.getCarouselScheduleClose() + "\n";
+                    }else{
+                        answer += "暂无该航班行李传送带停止的时间" + "\n";
+                    }
+                }
+            }else if(questionCategory.equals("登机门打开时间")){
+                for(BaseFlightInfo flight : flights){
+                    if(flight.getGateActualOpen() != null){
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班的登机门打开时间为:"
+                                + flight.getGateActualOpen() + "\n";
+                    }else if(flight.getGateEstimateOpen() != null){
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班的登机门打开时间为:"
+                                + flight.getGateEstimateOpen() + "\n";
+                    }else if(flight.getGateScheduleOpen() != null){
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班的登机门打开时间为:"
+                                + flight.getGateScheduleOpen() + "\n";
+                    }else{
+                        answer += "暂无该航班登机门打开的时间" + "\n";
+                    }
+                }
+            }else if(questionCategory.equals("登机门关闭时间")){
+                for(BaseFlightInfo flight : flights){
+                    if(flight.getGateActualClose() != null){
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班的登机门关闭时间为:"
+                                + flight.getGateActualClose() + "\n";
+                    }else if(flight.getGateEstimateClose() != null){
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班的登机门关闭时间为:"
+                                + flight.getGateEstimateClose() + "\n";
+                    }else if(flight.getGateScheduleClose() != null){
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班的登机门关闭时间为:"
+                                + flight.getGateScheduleClose() + "\n";
+                    }else{
+                        answer += "暂无该航班登机门关闭的时间" + "\n";
+                    }
+                }
             }
         }
         System.out.println("----------------------------------------");
@@ -244,54 +322,157 @@ public class Chat {
         }
         boolean AD = false;  //是问进港还是出港
 
-        for (BaseFlightInfo detail : baseFlightInfos) {  //这里重构的时候写成函数
-
-            //过滤比当前系统时间小的航班
-//			if(detail.getScheduleTime().compareTo(ToolsUtil.getSystemDate()) < 0){
-//				continue;
-//			}
-            if (questionCategory.equals("实际起飞") || questionCategory.equals("预计起飞")) {
-                AD = false;
-            } else if (questionCategory.equals("实际抵达") || questionCategory.equals("预计抵达")) {
-                AD = true;
-            }
-
-            if (detail.getActualTime() != null) {
-                if (detail.getDirection().equals("D") && !AD) {
-                    //System.out.println("航班号:" + detail.getCarrier()  + detail.getFlight() + " 实际起飞时间为:" + detail.getActualTime());
-                    answer += "航班号:" + detail.getCarrier() + detail.getFlight() + " 实际起飞时间为:" + detail.getActualTime() + "\n";
-                } else if (detail.getDirection().equals("A") && AD) {
-                    //System.out.println("航班号:" + detail.getCarrier()  + detail.getFlight() + " 实际到达时间为:" + detail.getActualTime());
-                    answer += "航班号:" + detail.getCarrier() + detail.getFlight() + " 实际抵达时间为:" + detail.getActualTime() + "\n";
+        if (questionCategory.equals("实际起飞") || questionCategory.equals("预计起飞")) {
+            for (BaseFlightInfo flight : baseFlightInfos) {   //这里要通过direction判断,是进港还是出港
+                if (flight.getActualTime() != null) {
+                    if (flight.getDirection().equals("D")) {
+                        //System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 实际起飞时间为:" + flight.getActualTime());
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 实际起飞时间为:" + flight.getActualTime() + "\n";
+                    }
+                    continue;
                 }
-                continue;
-            }
-            if (detail.getEstimateTime() != null) {
-                if (detail.getDirection().equals("A") && AD) {
-                    //System.out.println("航班号:" + detail.getCarrier()  + detail.getFlight() + " 预计到达时间为:" + detail.getEstimateTime());
-                    answer += "航班号:" + detail.getCarrier() + detail.getFlight() + " 预计抵达时间为:" + detail.getEstimateTime() + "\n";
-                } else if (detail.getDirection().equals("D") && !AD) {
-                    //System.out.println("航班号:" + detail.getCarrier()  + detail.getFlight() + " 预计起飞时间为:" + detail.getEstimateTime());
-                    answer += "航班号:" + detail.getCarrier() + detail.getFlight() + " 预计起飞时间为:" + detail.getEstimateTime() + "\n";
+                if (flight.getEstimateTime() != null) {
+                    if (flight.getDirection().equals("D")) {
+                        //System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计到达时间为:" + flight.getEstimateTime());
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 预计起飞时间为:" + flight.getEstimateTime() + "\n";
+                    }
+                    continue;
                 }
-                continue;
-            }
-            if (detail.getScheduleTime() != null) {
-                if (detail.getDirection().equals("A") && AD) {
-                    //System.out.println("航班号:" + detail.getCarrier()  + detail.getFlight() + " 预计抵达时间为:" + detail.getScheduleTime());
-                    answer += "航班号:" + detail.getCarrier() + detail.getFlight() + " 预计抵达时间为:" + detail.getScheduleTime() + "\n";
-                } else if (detail.getDirection().equals("D") && !AD) {
-                    //System.out.println("航班号:" + detail.getCarrier()  + detail.getFlight() + " 预计起飞时间为:" + detail.getScheduleTime());
-                    answer += "航班号:" + detail.getCarrier() + detail.getFlight() + " 预计起飞时间为:" + detail.getScheduleTime() + "\n";
+                if (flight.getScheduleTime() != null) {
+                    if (flight.getDirection().equals("D")) {
+                        //System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计起飞时间为:" + flight.getScheduleTime());
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 预计起飞时间为:" + flight.getScheduleTime() + "\n";
+                    }
+                    continue;
                 }
-                continue;
-            } else {   //该航班的所有信息? 预留
-                //System.out.println("暂无" + detail.getCarrier()  + detail.getFlight() + "航班的"+questionCategory+"信息,请稍后再试!!!");
+            }
+            //answer += "找不到该航班起飞的相关信息,您是否需要查询的是查询该航班的抵达相关信息?";
+        } else if (questionCategory.equals("实际抵达") || questionCategory.equals("预计抵达")) {
+            for (BaseFlightInfo flight : baseFlightInfos) {   //这里要通过direction判断,是进港还是出港
+                if (flight.getActualTime() != null) {
+                    if (flight.getDirection().equals("A")) {
+                        //System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计抵达时间为:" + flight.getScheduleTime());
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 预计抵达时间为:" + flight.getActualTime() + "\n";
+                    }
+                    continue;
+                }
+                if (flight.getEstimateTime() != null) {
+                    if (flight.getDirection().equals("A")) {
+                        //System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计到达时间为:" + flight.getEstimateTime());
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 预计抵达时间为:" + flight.getEstimateTime() + "\n";
+                    }
+                    continue;
+                }
+                if (flight.getScheduleTime() != null) {
+                    if (flight.getDirection().equals("A")) {
+                        //System.out.println("航班号:" + flight.getCarrier()  + flight.getFlight() + " 预计起飞时间为:" + flight.getScheduleTime());
+                        answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 预计抵达时间为:" + flight.getScheduleTime() + "\n";
+                    }
+                    continue;
+                }
+            }
+            //answer += "找不到该航班抵达的相关信息,您是否需要查询的是查询该航班的起飞相关信息?";
+        }else if(questionCategory.equals("登机口")){
+            for (BaseFlightInfo flight : baseFlightInfos) {
+                answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 登机口为:" + flight.getGate() + "  信息最后更新时间为:" + flight.getLastUpdated()  + "\n";
+            }
+        }else if(questionCategory.equals("候机楼")){
+            for (BaseFlightInfo flight : baseFlightInfos) {
+                answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 您的所查询航班的航站楼为:" + flight.getTerminal() + "航站楼" + "  信息最后更新时间为:" + flight.getLastUpdated() + "\n";
+            }
+        }else if(questionCategory.equals("状态")){
+            for(BaseFlightInfo flight : baseFlightInfos){
+                answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 您所查询航班的当前状态为:" + MysqlUtil.codeTodescription(flight.getFlightStatus()) + "  信息最后更新时间为:" + flight.getLastUpdated() + "\n";
+            }
+        }else if(questionCategory.equals("检票口")){
+            for(BaseFlightInfo flight : baseFlightInfos){
+                String checkinCounter = "";
+                if(flight.getCheckinCounter() == null){
+                    checkinCounter = "任意";
+                }else{
+                    checkinCounter = flight.getCheckinCounter();
+                }
+                answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 该航班在 " + checkinCounter + " 检票口检票" + "  信息最后更新时间为:" + flight.getLastUpdated() + "\n";
+            }
+        }else if(questionCategory.equals("开始检票时间")){
+            for(BaseFlightInfo flight : baseFlightInfos){
+                if(flight.getActualCheckinOpen() != null){
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班开始检票时间为:" +
+                            flight.getActualCheckinOpen() + "\n";
+                }else if(flight.getScheduleCheckinOpen() != null){
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班开始检票时间为:" +
+                            flight.getScheduleCheckinOpen() + "\n";
+                }else{
+                    answer += "还没有该航班检票开始的时间,请稍后查询!" + "\n";
+                }
+            }
+        }else if(questionCategory.equals("停止检票时间")){
+            for(BaseFlightInfo flight : baseFlightInfos){
+                if(flight.getActualCheckinClose() != null){
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班停止检票时间为:" +
+                            flight.getActualCheckinClose() + "\n";
+                }else if(flight.getScheduleCheckinClose() != null){
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班停止检票时间为:" +
+                            flight.getScheduleCheckinClose() + "\n";
+                }else{
+                    answer += "还没有该航班检票停止的时间,请稍后查询!" + "\n";
+                }
+            }
+        }else if (questionCategory.equals("传送带开始")) {
+            for(BaseFlightInfo flight : baseFlightInfos){
+                if(flight.getCarouselActualOpen() != null){
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  行李传送带开始时间为:"
+                            + flight.getCarouselActualOpen() + "\n";
+                }else if(flight.getCarouselScheduleOpen() != null){
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  行李传送带开始时间为:"
+                            + flight.getCarouselScheduleOpen() + "\n";
+                }else{
+                    answer += "暂无该航班行李传送带开始的时间" + "\n";
+                }
+            }
+        }else if(questionCategory.equals("传送带结束")){
+            for(BaseFlightInfo flight : baseFlightInfos){
+                if(flight.getCarouselActualClose() != null){
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  行李传送带停止时间为:"
+                            + flight.getCarouselActualClose() + "\n";
+                }else if(flight.getCarouselScheduleClose() != null){
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  行李传送带停止时间为:"
+                            + flight.getCarouselScheduleClose() + "\n";
+                }else{
+                    answer += "暂无该航班行李传送带停止的时间" + "\n";
+                }
+            }
+        }else if(questionCategory.equals("登机门打开时间")){
+            for(BaseFlightInfo flight : baseFlightInfos){
+                if(flight.getGateActualOpen() != null){
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班的登机门打开时间为:"
+                            + flight.getGateActualOpen() + "\n";
+                }else if(flight.getGateEstimateOpen() != null){
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班的登机门打开时间为:"
+                            + flight.getGateEstimateOpen() + "\n";
+                }else if(flight.getGateScheduleOpen() != null){
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班的登机门打开时间为:"
+                            + flight.getGateScheduleOpen() + "\n";
+                }else{
+                    answer += "暂无该航班登机门打开的时间" + "\n";
+                }
+            }
+        }else if(questionCategory.equals("登机门关闭时间")){
+            for(BaseFlightInfo flight : baseFlightInfos){
+                if(flight.getGateActualClose() != null){
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班的登机门关闭时间为:"
+                            + flight.getGateActualClose() + "\n";
+                }else if(flight.getGateEstimateClose() != null){
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班的登机门关闭时间为:"
+                            + flight.getGateEstimateClose() + "\n";
+                }else if(flight.getGateScheduleClose() != null){
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班的登机门关闭时间为:"
+                            + flight.getGateScheduleClose() + "\n";
+                }else{
+                    answer += "暂无该航班登机门关闭的时间" + "\n";
+                }
             }
         }
-
-        //最后如果没有信息就显示所有信息吧
-
 
         System.out.println("------------------------------------------------");
         return answer;
@@ -353,7 +534,7 @@ public class Chat {
     }
 
     public String getAnswer(String question) throws IOException {
-        String afterDeal = changeMulToOne(question);
+        String afterDeal = changeMulToOne(question);  //同义词搜索,归一
         String openId = "guest";
         String response = "";
         List<String> cityname = new ArrayList<String>();

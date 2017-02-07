@@ -37,6 +37,7 @@ public class Service {
 	public static String cutWords(String words) throws IOException{
 		String finalStr = "";
 		StringReader sr = new StringReader(words);
+		//智能分词可能会导致漏掉,false比较保险,比如成都到厦门的航班什么时候抵达,如果用智能分词的话,那么就会变成 成|都到|厦门的航班
 		IKSegmenter ik = new IKSegmenter(sr, true);
 		Lexeme lex = null;
 		System.out.println("分词结果为:");

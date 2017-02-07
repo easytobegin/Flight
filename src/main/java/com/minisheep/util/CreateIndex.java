@@ -71,19 +71,19 @@ public class CreateIndex {
         indexWriter.addDocument(document11);
 
         Document document12 = new Document();
-        document12.add(new TextField("title","开始检票", Field.Store.YES));
+        document12.add(new TextField("title","开始检票时间", Field.Store.YES));
         indexWriter.addDocument(document12);
 
         Document document13 = new Document();
-        document13.add(new TextField("title","停止检票", Field.Store.YES));
+        document13.add(new TextField("title","停止检票时间", Field.Store.YES));
         indexWriter.addDocument(document13);
 
         Document document14 = new Document();
-        document14.add(new TextField("title","行李传送带开始时间", Field.Store.YES));
+        document14.add(new TextField("title","传送带开始", Field.Store.YES));
         indexWriter.addDocument(document14);
 
         Document document15 = new Document();
-        document15.add(new TextField("title","行李传送带停止时间", Field.Store.YES));
+        document15.add(new TextField("title","传送带结束", Field.Store.YES));
         indexWriter.addDocument(document15);
 
         Document document16 = new Document();
@@ -91,9 +91,8 @@ public class CreateIndex {
         indexWriter.addDocument(document16);
 
         Document document17 = new Document();
-        document17.add(new TextField("title","登机门打开时间", Field.Store.YES));
+        document17.add(new TextField("title","登机门关闭时间", Field.Store.YES));
         indexWriter.addDocument(document17);
-
 
         //评分bug
 //        Document document18 = new Document();

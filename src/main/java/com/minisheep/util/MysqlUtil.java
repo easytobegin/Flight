@@ -3,6 +3,7 @@ package com.minisheep.util;
 import com.minisheep.bean.BaseFlightInfo;
 import com.minisheep.bean.Knowledge;
 import com.mysql.jdbc.PreparedStatement;
+import sun.jvm.hotspot.tools.Tool;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -269,6 +270,64 @@ public class MysqlUtil {
 				flight.setTerminal(rs.getString("terminal")); //候机楼
 				flight.setFlightStatus(rs.getString("flightstatus"));  //航班状态
 				flight.setCheckinCounter(rs.getString("checkincounter")); //检票口
+
+				if(rs.getString("schedulecheckinopen") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("schedulecheckinopen"));
+					flight.setScheduleCheckinOpen(afterDeal);
+				}
+				if(rs.getString("schedulecheckinclose") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("schedulecheckinclose"));
+					flight.setScheduleCheckinClose(afterDeal);
+				}
+				if(rs.getString("actualcheckinopen") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("actualcheckinopen"));
+					flight.setActualCheckinOpen(afterDeal);
+				}
+				if(rs.getString("actualcheckinclose") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("actualcheckinclose"));
+					flight.setActualCheckinClose(afterDeal);
+				}
+				if (rs.getString("carouselscheduleopen") != null) {
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("carouselscheduleopen"));
+					flight.setCarouselScheduleOpen(afterDeal);
+				}
+				if(rs.getString("carouselscheduleclose") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("carouselscheduleclose"));
+					flight.setCarouselScheduleClose(afterDeal);
+				}
+				if(rs.getString("carouselactualopen") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("carouselactualopen"));
+					flight.setCarouselActualOpen(afterDeal);
+				}
+				if(rs.getString("carouselactualclose") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("carouselactualclose"));
+					flight.setCarouselActualClose(afterDeal);
+				}
+
+				if(rs.getString("gatescheduleopen") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("gatescheduleopen"));
+					flight.setGateScheduleOpen(afterDeal);
+				}
+				if(rs.getString("gatescheduleclose") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("gatescheduleclose"));
+					flight.setGateScheduleClose(afterDeal);
+				}
+				if(rs.getString("gateactualopen") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("gateactualopen"));
+					flight.setGateActualOpen(afterDeal);
+				}
+				if(rs.getString("gateactualclose") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("gateactualclose"));
+					flight.setGateActualClose(afterDeal);
+				}
+				if(rs.getString("gateestimateopen") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("gateestimateopen"));
+					flight.setGateEstimateOpen(afterDeal);
+				}
+				if(rs.getString("gateestimateclose") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("gateestimateclose"));
+					flight.setGateEstimateClose(afterDeal);
+				}
 				flights.add(flight);
 			}
 		}catch (Exception e) {
@@ -370,18 +429,71 @@ public class MysqlUtil {
 					String afterDeal = ToolsUtil.removeDotZero(rs.getString("lastupdated"));
 					baseFlightInfo.setLastUpdated(afterDeal);
 				}
+				if(rs.getString("schedulecheckinopen") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("schedulecheckinopen"));
+					baseFlightInfo.setScheduleCheckinOpen(afterDeal);
+				}
+				if(rs.getString("schedulecheckinclose") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("schedulecheckinclose"));
+					baseFlightInfo.setScheduleCheckinClose(afterDeal);
+				}
+				if(rs.getString("actualcheckinopen") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("actualcheckinopen"));
+					baseFlightInfo.setActualCheckinOpen(afterDeal);
+				}
+				if(rs.getString("actualcheckinclose") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("actualcheckinclose"));
+					baseFlightInfo.setActualCheckinClose(afterDeal);
+				}
+				if (rs.getString("carouselscheduleopen") != null) {
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("carouselscheduleopen"));
+					baseFlightInfo.setCarouselScheduleOpen(afterDeal);
+				}
+				if(rs.getString("carouselscheduleclose") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("carouselscheduleclose"));
+					baseFlightInfo.setCarouselScheduleClose(afterDeal);
+				}
+				if(rs.getString("carouselactualopen") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("carouselactualopen"));
+					baseFlightInfo.setCarouselActualOpen(afterDeal);
+				}
+				if(rs.getString("carouselactualclose") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("carouselactualclose"));
+					baseFlightInfo.setCarouselActualClose(afterDeal);
+				}
+
+				if(rs.getString("gatescheduleopen") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("gatescheduleopen"));
+					baseFlightInfo.setGateScheduleOpen(afterDeal);
+				}
+				if(rs.getString("gatescheduleclose") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("gatescheduleclose"));
+					baseFlightInfo.setGateScheduleClose(afterDeal);
+				}
+				if(rs.getString("gateactualopen") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("gateactualopen"));
+					baseFlightInfo.setGateActualOpen(afterDeal);
+				}
+				if(rs.getString("gateactualclose") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("gateactualclose"));
+					baseFlightInfo.setGateActualClose(afterDeal);
+				}
+				if(rs.getString("gateestimateopen") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("gateestimateopen"));
+					baseFlightInfo.setGateEstimateOpen(afterDeal);
+				}
+				if(rs.getString("gateestimateclose") != null){
+					String afterDeal = ToolsUtil.removeDotZero(rs.getString("gateestimateclose"));
+					baseFlightInfo.setGateEstimateClose(afterDeal);
+				}
+
 
 				baseFlightInfo.setFlightId(rs.getInt("flightid"));  //FLIGHTID
 				baseFlightInfo.setCarrier(rs.getString("carrier"));
 				baseFlightInfo.setFlight(rs.getString("flight"));
 				baseFlightInfo.setOrigin(rs.getString("origin"));
 				baseFlightInfo.setDestination(rs.getString("destination"));
-				//baseFlightInfo.setScheduleTime(rs.getString("scheduletime"));  //计划起飞时间
-				//baseFlightInfo.setScheduleArrivalTime(rs.getString("SCHEDULEARRIVALTIME")); //计划到达时间
-				//baseFlightInfo.setEstimateTime(rs.getString("estimatetime"));
-				//baseFlightInfo.setActualTime(rs.getString("actualtime")); //实际起飞时间
-				//baseFlightInfo.setActualArrivalTime(rs.getString("ACTUALARRIVALTIME")); //实际到达时间
-				//baseFlightInfo.setLastUpdated(rs.getString("lastupdated"));  //最后更新时间
+
 				baseFlightInfo.setFlightStatus(rs.getString("flightstatus"));
 				baseFlightInfo.setDirection(rs.getString("direction"));
 				baseFlightInfo.setGate(rs.getString("gate")); //登机口
