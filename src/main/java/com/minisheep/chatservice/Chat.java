@@ -158,6 +158,8 @@ public class Chat {
                             answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 预计起飞时间为:" + flight.getScheduleTime() + "\n";
                         }
                         continue;
+                    }else{
+                        answer += "暂无该航班的起飞信息";
                     }
                 }
                 //answer += "找不到该航班起飞的相关信息,您是否需要查询的是查询该航班的抵达相关信息?";
@@ -183,6 +185,8 @@ public class Chat {
                             answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 预计抵达时间为:" + flight.getScheduleTime() + "\n";
                         }
                         continue;
+                    }else{
+                        answer += "暂无该航班的抵达信息";
                     }
                 }
                 //answer += "找不到该航班抵达的相关信息,您是否需要查询的是查询该航班的起飞相关信息?";
@@ -296,7 +300,7 @@ public class Chat {
         问题归一化后根据出发城市和到达城市数据库查询返回结果
         给出部分用户需要的信息
      */
-    public String delWithFlightCityQuestion(List<String> cityName, String questionCategory) {
+    public static String delWithFlightCityQuestion(List<String> cityName, String questionCategory) {
         List<BaseFlightInfo> baseFlightInfos = new ArrayList<BaseFlightInfo>();
         String dep = "";
         String arr = "";
@@ -345,8 +349,9 @@ public class Chat {
                     }
                     continue;
                 }
+                //没有相关信息,用户查询的是否是错的(比如降落变成起飞,起飞变成降落)
+
             }
-            //answer += "找不到该航班起飞的相关信息,您是否需要查询的是查询该航班的抵达相关信息?";
         } else if (questionCategory.equals("实际抵达") || questionCategory.equals("预计抵达")) {
             for (BaseFlightInfo flight : baseFlightInfos) {   //这里要通过direction判断,是进港还是出港
                 if (flight.getActualTime() != null) {
