@@ -22,7 +22,7 @@ public class CreateIndex {
         Directory directory = FSDirectory.open(new File(indexPath));
         //Analyzer analyzer = new IKAnalyzer();
 
-		IKAnalyzer analyzer = new IKAnalyzer();
+        IKAnalyzer analyzer = new IKAnalyzer();
         IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_46, analyzer);
         IndexWriter indexWriter = new IndexWriter(directory, config);
         Document document1 = new Document();
@@ -94,10 +94,18 @@ public class CreateIndex {
         document17.add(new TextField("title","登机门关闭时间", Field.Store.YES));
         indexWriter.addDocument(document17);
 
-        //评分bug
-//        Document document18 = new Document();
-//        document18.add(new TextField("title","航班任务", Field.Store.YES));
-//        indexWriter.addDocument(document18);
+        Document document18 = new Document();
+        document18.add(new TextField("title","进出港航班数量", Field.Store.YES));
+        indexWriter.addDocument(document18);
+
+        Document document19 = new Document();
+        document19.add(new TextField("title","航班任务", Field.Store.YES));
+        indexWriter.addDocument(document19);
+
+        Document document20 = new Document();
+        document20.add(new TextField("title","航空公司", Field.Store.YES));
+        indexWriter.addDocument(document20);
+
         indexWriter.close();
     }
 }

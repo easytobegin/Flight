@@ -60,7 +60,7 @@ public class MysqlUtil {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static List<Knowledge> findAllKownLedge(){
 		List<Knowledge> knowledges = new ArrayList<Knowledge>();
 		String sql = "select * from knowledge";
@@ -88,11 +88,11 @@ public class MysqlUtil {
 		}
 		return knowledges;
 	}
-	
+
 	public static int getLastCategory(String openId){
 		int charCategory = -1;
 		String sql = "select chat_category from chat_log where open_id=? order by id desc limit 0,1"; //0偏移1
-		
+
 		MysqlUtil mysqlUtil = new MysqlUtil();
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -113,11 +113,11 @@ public class MysqlUtil {
 		}
 		return charCategory;
 	}
-	
+
 	public static String getKnowledSub(int knowledgeId){
 		String knowledgeAnswer = "";
 		String sql = "select answer from knowledge_sub where pid=? order by rand() limit 0,1";
-		
+
 		MysqlUtil mysqlUtil = new MysqlUtil();
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -138,11 +138,11 @@ public class MysqlUtil {
 		}
 		return knowledgeAnswer;
 	}
-	
+
 	public static String getJoke(){
 		String jokeContent = "";
 		String sql = "select joke_content from joke order by rand() limit 0,1";
-		
+
 		MysqlUtil mysqlUtil = new MysqlUtil();
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -162,10 +162,10 @@ public class MysqlUtil {
 		}
 		return jokeContent;
 	}
-	
+
 	public static void saveChatLog(String openId,String createTime,String reqMsg,String respMsg,int chatCategory){
 		String sql = "insert into chat_log(open_id,create_time,req_msg,resp_msg,chat_category) value(?,?,?,?,?)";
-		
+
 		MysqlUtil mysqlUtil = new MysqlUtil();
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -186,10 +186,10 @@ public class MysqlUtil {
 			mysqlUtil.closeConnection(conn, ps, rs);
 		}
 	}
-	
+
 	public static void addKnowledge(Knowledge item){
 		String sql = "insert into knowledge(question,answer,category) values(?,?,?)";
-		
+
 		MysqlUtil mysqlUtil = new MysqlUtil();
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -219,13 +219,13 @@ public class MysqlUtil {
 		//String scheauleTimesql = "select * from Flight where CARRIER = ? and FLIGHT = ?"+" and OPDATE = ?"; //计划起飞时间
 		String scheauleTimesql = "select * from t_flightinfo where carrier = ? and flight = ?";
 		//System.out.println("sql语句为:" + scheauleTimesql);
-		
+
 		List<BaseFlightInfo> flights = new ArrayList<BaseFlightInfo>();
 		MysqlUtil mysqlUtil = new MysqlUtil();
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		
+
 		try{
 			conn = mysqlUtil.getConnectionFlight();
 			ps = (PreparedStatement) conn.prepareStatement(scheauleTimesql);
@@ -328,6 +328,7 @@ public class MysqlUtil {
 					String afterDeal = ToolsUtil.removeDotZero(rs.getString("gateestimateclose"));
 					flight.setGateEstimateClose(afterDeal);
 				}
+				flight.setFlightTask(rs.getString("flighttask")); //航班任务状态
 				flights.add(flight);
 			}
 		}catch (Exception e) {
@@ -338,7 +339,7 @@ public class MysqlUtil {
 		}
 		return flights;
 	}
-	
+
 	/*
 	 * 根据中文名返回英文简写
 	 */
@@ -348,7 +349,7 @@ public class MysqlUtil {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		
+
 		conn = mysqlUtil.getConnectionFlight();
 		try {
 			ps = (PreparedStatement) conn.prepareStatement(searchsql);
@@ -403,7 +404,7 @@ public class MysqlUtil {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		List<BaseFlightInfo> baseFlightInfos = new ArrayList<BaseFlightInfo>();
-		
+
 		conn = mysqlUtil.getConnectionFlight();
 		try{
 			ps = (PreparedStatement) conn.prepareStatement(searchsql);
@@ -500,6 +501,7 @@ public class MysqlUtil {
 				baseFlightInfo.setTerminal(rs.getString("terminal")); //候机楼
 				baseFlightInfo.setFlightStatus(rs.getString("flightstatus"));  //航班状态
 				baseFlightInfo.setCheckinCounter(rs.getString("checkincounter")); //检票口
+				baseFlightInfo.setFlightTask(rs.getString("flighttask")); //航班任务状态
 				baseFlightInfos.add(baseFlightInfo);
 			}
 		}catch (Exception e) {
@@ -529,6 +531,73 @@ public class MysqlUtil {
 			e.printStackTrace();
 		}
 		//System.out.println("飞机目前的状态为:" + result);
+		return result;
+	}
+
+	public static int depAndarrCount(String direction){
+		String searchsql = "select COUNT(*) from t_flightinfo where direction = ?";
+		MysqlUtil mysqlUtil = new MysqlUtil();
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		conn = mysqlUtil.getConnectionFlight();
+		String result = "";
+		int cnt = 0;
+		try {
+			ps = (PreparedStatement) conn.prepareStatement(searchsql);
+			ps.setString(1, direction);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				result = rs.getString("COUNT(*)");
+			}
+			cnt = Integer.parseInt(result);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+
+	public static String flightTaskCodeChangeCN(String flightTaskCode){  //任务英文代码转中文
+		String searchsql = "select description from `base_flighttask` where flighttaskcode = ?";
+		MysqlUtil mysqlUtil = new MysqlUtil();
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		conn = mysqlUtil.getConnectionFlight();
+		String result = "";
+
+		try {
+			ps = (PreparedStatement) conn.prepareStatement(searchsql);
+			ps.setString(1, flightTaskCode);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				result = rs.getString("description");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	public static String flightCompany(String companyCode){
+		String searchsql = "select cnname from base_airlines where iatacode = ?";
+
+		MysqlUtil mysqlUtil = new MysqlUtil();
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		conn = mysqlUtil.getConnectionFlight();
+		String result = "";
+		try {
+			ps = (PreparedStatement) conn.prepareStatement(searchsql);
+			ps.setString(1, companyCode);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				result = rs.getString("cnname");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return result;
 	}
 }

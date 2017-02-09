@@ -9,6 +9,7 @@ import com.minisheep.util.MySearch;
 import com.minisheep.util.MysqlUtil;
 import com.minisheep.util.SynonymUtil;
 import com.minisheep.util.ToolsUtil;
+import com.sun.xml.internal.rngom.parse.host.Base;
 import org.apache.lucene.queryparser.classic.ParseException;
 
 import java.io.IOException;
@@ -210,7 +211,7 @@ public class Chat {
                     }else{
                         checkinCounter = flight.getCheckinCounter();
                     }
-                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 该航班在 " + checkinCounter + " 检票口检票" + "  信息最后更新时间为:" + flight.getLastUpdated() + "\n";
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 该航班在 " + checkinCounter + " 值机柜台检票" + "  信息最后更新时间为:" + flight.getLastUpdated() + "\n";
                 }
             }else if(questionCategory.equals("开始检票时间")){
                 for(BaseFlightInfo flight : flights){
@@ -289,6 +290,31 @@ public class Chat {
                     }else{
                         answer += "暂无该航班登机门关闭的时间" + "\n";
                     }
+                }
+            }
+            else if(questionCategory.equals("航班任务")){
+                for(BaseFlightInfo flight : flights){
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班目前的航班任务状态为:"
+                            + MysqlUtil.flightTaskCodeChangeCN(flight.getFlightTask()) + "\n";
+                }
+            }else if(questionCategory.equals("航空公司")){  //根据航班号可以查询航空公司
+                String companyCode = "";
+                companyCode += FlightCode.charAt(0);
+                companyCode += FlightCode.charAt(1);
+                if(MysqlUtil.flightCompany(companyCode) != "")
+                    answer += "该航班所属的航空公司为:" + MysqlUtil.flightCompany(companyCode) + "\n";
+                else
+                    answer += "您输入的航空公司英文代号有误,没有相关信息!" + "\n";
+            }else{
+                for(BaseFlightInfo flight : flights){  //全部信息给出?
+                    String passby;
+                    if(flight.getPassby() != null){
+                        passby = MysqlUtil.CNNamebyIataCodeSearch(flight.getPassby());
+                    }else{
+                        passby = "无";
+                    }
+                    answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 该航班是从 " + MysqlUtil.CNNamebyIataCodeSearch(flight.getOrigin())
+                            + " 飞往 " + MysqlUtil.CNNamebyIataCodeSearch(flight.getDestination()) + " 经停 " + passby + "\n";
                 }
             }
         }
@@ -397,7 +423,7 @@ public class Chat {
                 }else{
                     checkinCounter = flight.getCheckinCounter();
                 }
-                answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 该航班在 " + checkinCounter + " 检票口检票" + "  信息最后更新时间为:" + flight.getLastUpdated() + "\n";
+                answer += "航班号:" + flight.getCarrier() + flight.getFlight() + " 该航班在 " + checkinCounter + " 值机柜台检票" + "  信息最后更新时间为:" + flight.getLastUpdated() + "\n";
             }
         }else if(questionCategory.equals("开始检票时间")){
             for(BaseFlightInfo flight : baseFlightInfos){
@@ -477,8 +503,12 @@ public class Chat {
                     answer += "暂无该航班登机门关闭的时间" + "\n";
                 }
             }
+        }else if(questionCategory.equals("航班任务")){
+            for(BaseFlightInfo flight : baseFlightInfos){
+                answer += "航班号:" + flight.getCarrier() + flight.getFlight() + "  该航班目前的航班任务状态为:"
+                        + MysqlUtil.flightTaskCodeChangeCN(flight.getFlightTask()) + "\n";
+            }
         }
-
         System.out.println("------------------------------------------------");
         return answer;
     }
@@ -588,8 +618,14 @@ public class Chat {
             //这里显示的是全部数据
             //response = chat.responseFlightByCityNameSearch(cityname,question);
         }
-        if (response.equals("") && cityname.size() == 0) {   //普通静态的数据库
-            response = chat.ChatWithBot(question, openId);
+        if (response.equals("") && cityname.size() == 0) {   //普通静态的数据库v
+            if (afterDeal.equals("进出港航班数量")){
+                int flightArr = MysqlUtil.depAndarrCount("A");
+                int flightDep = MysqlUtil.depAndarrCount("D");
+                response = "当前进港航班数量为:" + flightArr + "," + "出港航班数量为:" + flightDep + "\n";
+            }else {
+                response = chat.ChatWithBot(question, openId);
+            }
         }
         return response;
     }
