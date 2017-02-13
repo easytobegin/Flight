@@ -270,6 +270,7 @@ public class MysqlUtil {
 				flight.setTerminal(rs.getString("terminal")); //候机楼
 				flight.setFlightStatus(rs.getString("flightstatus"));  //航班状态
 				flight.setCheckinCounter(rs.getString("checkincounter")); //检票口
+				flight.setIrregularCode(rs.getString("irregularcode"));
 
 				if(rs.getString("schedulecheckinopen") != null){
 					String afterDeal = ToolsUtil.removeDotZero(rs.getString("schedulecheckinopen"));
@@ -502,6 +503,7 @@ public class MysqlUtil {
 				baseFlightInfo.setFlightStatus(rs.getString("flightstatus"));  //航班状态
 				baseFlightInfo.setCheckinCounter(rs.getString("checkincounter")); //检票口
 				baseFlightInfo.setFlightTask(rs.getString("flighttask")); //航班任务状态
+				baseFlightInfo.setIrregularCode(rs.getString("irregularcode"));
 				baseFlightInfos.add(baseFlightInfo);
 			}
 		}catch (Exception e) {
@@ -579,7 +581,7 @@ public class MysqlUtil {
 		return result;
 	}
 
-	public static String flightCompany(String companyCode){
+	public static String flightCompany(String companyCode){  //查询航空公司
 		String searchsql = "select cnname from base_airlines where iatacode = ?";
 
 		MysqlUtil mysqlUtil = new MysqlUtil();
@@ -599,5 +601,29 @@ public class MysqlUtil {
 			e.printStackTrace();
 		}
 		return result;
+	}
+
+	public static String irregularCode(String irrCode){
+		String searchsql = "select description from base_irregularcode where irregularcode = ?";
+
+		MysqlUtil mysqlUtil = new MysqlUtil();
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		conn = mysqlUtil.getConnectionFlight();
+		String result = "";
+
+		try {
+			ps = (PreparedStatement) conn.prepareStatement(searchsql);
+			ps.setString(1, irrCode);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				result = rs.getString("description");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+		//select description from base_irregularcode where irregularcode = "100010";
 	}
 }

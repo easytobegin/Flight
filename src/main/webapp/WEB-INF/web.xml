@@ -12,6 +12,11 @@
         <servlet-name>serverTest</servlet-name>
         <servlet-class>com.minisheep.test.ServerTest</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>listServlet</servlet-name>
+        <servlet-class>com.minisheep.test.ListServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>jsonServlet</servlet-name>
         <url-pattern>/demo</url-pattern>
@@ -19,6 +24,10 @@
     <servlet-mapping>
         <servlet-name>serverTest</servlet-name>
         <url-pattern>/testdemo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>listServlet</servlet-name>
+        <url-pattern>/ListServlet</url-pattern>
     </servlet-mapping>
 
 </web-app>

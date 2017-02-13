@@ -10,6 +10,7 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 import org.wltea.analyzer.lucene.IKAnalyzer;
+import sun.misc.DoubleConsts;
 
 import java.io.File;
 import java.io.IOException;
@@ -106,6 +107,9 @@ public class CreateIndex {
         document20.add(new TextField("title","航空公司", Field.Store.YES));
         indexWriter.addDocument(document20);
 
+        Document document21 = new Document();
+        document21.add(new TextField("title","异常状态", Field.Store.YES));
+        indexWriter.addDocument(document21);
         indexWriter.close();
     }
 }

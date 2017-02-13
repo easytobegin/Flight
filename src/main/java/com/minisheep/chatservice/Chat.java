@@ -2,6 +2,7 @@ package com.minisheep.chatservice;
 
 
 import com.minisheep.bean.BaseFlightInfo;
+import com.minisheep.bean.QAresponse;
 import com.minisheep.searchflight.SearchFlight;
 import com.minisheep.searchflight.SearchFlightDetail;
 import com.minisheep.searchflight.SearchIATACodeByCNName;
@@ -122,6 +123,8 @@ public class Chat {
     /*
         问题归一化后根据航班号数据库查询返回结果，考虑用户点击更多该航班动态的时候显示全部该航班的内容
         给出用户需要的部分信息
+
+        重构 : 返回List数组,BaseFlightInfo
     */
     public String dealWithFlightCodeQuestion(String FlightCode, String questionCategory) {
         SearchFlight search = new SearchFlight();
@@ -305,6 +308,15 @@ public class Chat {
                     answer += "该航班所属的航空公司为:" + MysqlUtil.flightCompany(companyCode) + "\n";
                 else
                     answer += "您输入的航空公司英文代号有误,没有相关信息!" + "\n";
+            }else if(questionCategory.equals("异常状态")){
+                for(BaseFlightInfo flight : flights){
+                    if(flight.getIrregularCode() != null){
+                        answer += "该航班异常原因为:" + MysqlUtil.irregularCode(flight.getIrregularCode()) + "\n";
+                    }
+                }
+                if(answer.equals("")){
+                    answer += "该航班无异常原因!";
+                }
             }else{
                 for(BaseFlightInfo flight : flights){  //全部信息给出?
                     String passby;
@@ -325,6 +337,8 @@ public class Chat {
     /*
         问题归一化后根据出发城市和到达城市数据库查询返回结果
         给出部分用户需要的信息
+
+        重构的时候返回一个BaseFlightInfo的List数组
      */
     public static String delWithFlightCityQuestion(List<String> cityName, String questionCategory) {
         List<BaseFlightInfo> baseFlightInfos = new ArrayList<BaseFlightInfo>();
