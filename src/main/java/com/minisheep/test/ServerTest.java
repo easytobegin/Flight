@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 /**
  * Created by minisheep on 17/1/6.
@@ -45,14 +46,18 @@ public class ServerTest extends HttpServlet {
 
         Chat chat = new Chat();
         //out.print(question);
-        String result = chat.getAnswer(question);
+        List<String> result = chat.getAnswer(question);
 
         JSONStringer stringer = new JSONStringer();
+        int cnt = 1;
         try{
             stringer.array();
-                stringer.object().key("id").value(1)
+            for(String res : result)
+            {
+                stringer.object().key("id").value(cnt++)
                         .key("question").value(question)
-                        .key("answer").value(result).endObject();
+                        .key("answer").value(res).endObject();
+            }
             stringer.endArray();
         }catch (Exception e){}
         response.getOutputStream().write(stringer.toString().getBytes("UTF-8"));
