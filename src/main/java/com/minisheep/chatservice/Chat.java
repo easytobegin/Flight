@@ -75,19 +75,44 @@ public class Chat {
         return resultQuestion;
     }
 
+    public static List<BaseFlightInfo> detailFlightInfoByCode(String FlightCode){  //根据航班号返回Bean所有信息
+        SearchFlight search = new SearchFlight();
+        List<BaseFlightInfo> flights = new ArrayList<BaseFlightInfo>();
+        flights = search.searchFlightname(FlightCode);
+        return flights;
+    }
 
+    public static List<BaseFlightInfo> detailFlightInfoByCity(List<String> cityName){
+        List<BaseFlightInfo> baseFlightInfos = new ArrayList<BaseFlightInfo>();
+
+        String dep = "";
+        String arr = "";
+        String answer = "";
+        if (cityName.size() == 1) {
+            dep = cityName.get(0);
+            //System.out.println("dep:" + dep + "," + "arr:" + arr);
+        } else if (cityName.size() >= 2) {
+            dep = cityName.get(0);
+            arr = cityName.get(1);
+            //System.out.println("dep:" + dep + "," + "arr:" + arr);
+        }
+        SearchFlightDetail searchFlightDetail = new SearchFlightDetail();
+        baseFlightInfos = searchFlightDetail.flightDetail(dep, arr);
+        return baseFlightInfos;
+    }
     /*
         问题归一化后根据航班号数据库查询返回结果，考虑用户点击更多该航班动态的时候显示全部该航班的内容
         给出用户需要的部分信息
 
         重构 : 返回List数组,BaseFlightInfo
     */
-    public List<String> dealWithFlightCodeQuestion(String FlightCode, String questionCategory) {
-        SearchFlight search = new SearchFlight();
+    public static List<String> dealWithFlightCodeQuestion(String FlightCode, String questionCategory) {
+        //SearchFlight search = new SearchFlight();
         List<String> flightInfoResult = new ArrayList<String>();
         String answer = "";
         List<BaseFlightInfo> flights = new ArrayList<BaseFlightInfo>();
-        flights = search.searchFlightname(FlightCode);
+        //flights = search.searchFlightname(FlightCode);
+        flights = detailFlightInfoByCode(FlightCode);
         boolean AD = false;  //是问进港还是出港
         if (!FlightCode.equals("") && FlightCode != null) {  //问哪里到哪里的问题
 
@@ -343,22 +368,10 @@ public class Chat {
 
         List<String> flightInfoResult = new ArrayList<String>();
 
-        String dep = "";
-        String arr = "";
         String answer = "";
-        if (cityName.size() == 1) {
-            dep = cityName.get(0);
-            //System.out.println("dep:" + dep + "," + "arr:" + arr);
-        } else if (cityName.size() == 2) {
-            dep = cityName.get(0);
-            arr = cityName.get(1);
-            //System.out.println("dep:" + dep + "," + "arr:" + arr);
-        } else if (cityName.size() > 2) {  //大于两个城市名取前两个
-            dep = cityName.get(0);
-            arr = cityName.get(1);
-        }
-        SearchFlightDetail searchFlightDetail = new SearchFlightDetail();
-        baseFlightInfos = searchFlightDetail.flightDetail(dep, arr);
+
+        baseFlightInfos = detailFlightInfoByCity(cityName);
+
         if (baseFlightInfos.size() == 0 && cityName.size() != 0) {
             System.out.println("没有此航班的动态信息!");
             //break;
@@ -627,6 +640,7 @@ public class Chat {
         }
         return answer;
     }
+
 
     public static void main(String[] args) {
         //Service.createIndex();  //建立索引,建立一次就够了

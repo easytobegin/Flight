@@ -276,7 +276,7 @@ public class MysqlUtil {
 					String afterDeal = ToolsUtil.removeDotZero(rs.getString("schedulecheckinopen"));
 					flight.setScheduleCheckinOpen(afterDeal);
 				}
-				if(rs.getString("schedulecheckinclose") != null){
+				if(rs.getString("schedulecheckinclose") != null) {
 					String afterDeal = ToolsUtil.removeDotZero(rs.getString("schedulecheckinclose"));
 					flight.setScheduleCheckinClose(afterDeal);
 				}

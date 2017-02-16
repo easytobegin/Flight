@@ -13,8 +13,8 @@
         <servlet-class>com.minisheep.test.ServerTest</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>listServlet</servlet-name>
-        <servlet-class>com.minisheep.test.ListServlet</servlet-class>
+        <servlet-name>detailinfo</servlet-name>
+        <servlet-class>com.minisheep.test.DetailInfoServer</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -26,8 +26,8 @@
         <url-pattern>/testdemo</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>listServlet</servlet-name>
-        <url-pattern>/ListServlet</url-pattern>
+        <servlet-name>detailinfo</servlet-name>
+        <url-pattern>/detailinfo</url-pattern>
     </servlet-mapping>
 
 </web-app>
