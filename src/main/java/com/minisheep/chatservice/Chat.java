@@ -2,7 +2,6 @@ package com.minisheep.chatservice;
 
 
 import com.minisheep.bean.BaseFlightInfo;
-import com.minisheep.bean.QAresponse;
 import com.minisheep.searchflight.SearchFlight;
 import com.minisheep.searchflight.SearchFlightDetail;
 import com.minisheep.searchflight.SearchIATACodeByCNName;
@@ -10,7 +9,6 @@ import com.minisheep.util.MySearch;
 import com.minisheep.util.MysqlUtil;
 import com.minisheep.util.SynonymUtil;
 import com.minisheep.util.ToolsUtil;
-import com.sun.xml.internal.rngom.parse.host.Base;
 import org.apache.lucene.queryparser.classic.ParseException;
 
 import java.io.IOException;
@@ -25,7 +23,7 @@ import java.util.Scanner;
  */
 
 public class Chat {
-    private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public String ChatWithBot(String question, String openId) {
         Date now = new Date();
@@ -73,6 +71,16 @@ public class Chat {
         List<BaseFlightInfo> flights = new ArrayList<BaseFlightInfo>();
         flights = search.searchFlightname(FlightCode);
         return flights;
+    }
+
+    public long changeToTimestamp(String time){
+        try {
+            Date date = format.parse(time);
+            return date.getTime();
+        } catch (java.text.ParseException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     //待完成
