@@ -175,10 +175,11 @@ public class Service {
 	
 	public static String getDefaultAnswer(){
 		String[] answer = {
-			"是在下才疏学浅,要不您换种问法?",
-			"时代在进步,我也要努力学习才是。",
-			"您问的问题好深奥，我听不懂。",
-			"我应该跟我的主人多学点东西的。"
+				"是在下才疏学浅,要不您换种问法?",
+				"时代在进步,我也要努力学习才是。",
+				"您问的问题好深奥，我听不懂。",
+				"我应该跟我的主人多学点东西的。",
+				"嗯?"
 		};
 		return answer[getRandomNumber(answer.length)];
 	}

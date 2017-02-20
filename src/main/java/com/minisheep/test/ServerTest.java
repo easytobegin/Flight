@@ -88,7 +88,7 @@ public class ServerTest extends HttpServlet {
                     stringer.array();
                     for(String res : result)
                     {
-                        stringer.object().key("id").value(flightId.get(cnt))
+                        stringer.object().key("flightcode").value(flightId.get(cnt))
                                 .key("question").value(question)
                                 .key("answer").value(res)
                                 .key("direction").value(direction.get(cnt++))
@@ -99,7 +99,7 @@ public class ServerTest extends HttpServlet {
                     String defaultAnswer = Service.getDefaultAnswer();
                     System.out.println("defaultAnswer:"+defaultAnswer);
                     stringer.array();
-                    stringer.object().key("id").value(0)
+                    stringer.object().key("flightcode").value(0)
                             .key("question").value(question)
                             .key("answer").value("您输入的航班号有误,请重新输入!")
                             .endObject();
@@ -110,7 +110,7 @@ public class ServerTest extends HttpServlet {
                     stringer.array();
                     for(String res : result)
                     {
-                        stringer.object().key("id").value(cnt)
+                        stringer.object().key("flightcode").value(cnt)
                                 .key("question").value(question)
                                 .key("answer").value(res)
                                 .key("direction").value(direction.get(cnt++))
@@ -120,7 +120,7 @@ public class ServerTest extends HttpServlet {
                 }else{
                     String defaultAnswer = Service.getDefaultAnswer();
                     stringer.array();
-                    stringer.object().key("id").value(0)
+                    stringer.object().key("flightcode").value(0)
                             .key("question").value(question)
                             .key("answer").value(defaultAnswer)
                             .endObject();
@@ -130,7 +130,7 @@ public class ServerTest extends HttpServlet {
                 stringer.array();
                 for(String res : result)
                 {
-                    stringer.object().key("id").value(cnt++)
+                    stringer.object().key("flightcode").value(cnt++)
                             .key("question").value(question)
                             .key("answer").value(res)
                             .endObject();
