@@ -1,8 +1,10 @@
 package com.minisheep.test;
 
+import com.minisheep.bean.BaseFlightInfo;
 import com.minisheep.bean.QAresponse;
 import com.minisheep.chatservice.Chat;
 import com.minisheep.chatservice.Service;
+import com.minisheep.util.MysqlUtil;
 import org.json.JSONStringer;
 
 import javax.servlet.ServletException;
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -46,19 +49,94 @@ public class ServerTest extends HttpServlet {
 
         Chat chat = new Chat();
         //out.print(question);
+        String flightCode = Chat.getFlightId(question);  //先获取航班号
+        List<String> city = Chat.getDoubleCity(question); //获取两个城市
+        List<BaseFlightInfo> flights = new ArrayList<BaseFlightInfo>();
+        List<String> flightId = new ArrayList<String>();
+        List<Integer> direction = new ArrayList<Integer>();
+        if(!flightCode.equals("")){ //如果有航班号
+            flights = Chat.detailFlightInfoByCode(flightCode);
+            for(BaseFlightInfo flight : flights){
+                flightId.add(flight.getCarrier() + flight.getFlight());
+                if(flight.getDirection().equals("A")){
+                    direction.add(1);  //进港
+                }else{
+                    direction.add(2);  //出港
+                }
+            }
+        }else if(city.size() != 0){  //没有航班号，有城市
+            flights = Chat.detailFlightInfoByCity(city);
+            if(flights.size() != 0){
+                for(BaseFlightInfo flight : flights){
+                    flightId.add(flight.getCarrier() + flight.getFlight());
+                    if(flight.getDirection().equals("A")){
+                        direction.add(1);  //进港
+                    }else{
+                        direction.add(2);  //出港
+                    }
+                }
+            }
+        }
+
         List<String> result = chat.getAnswer(question);
 
         JSONStringer stringer = new JSONStringer();
-        int cnt = 1;
+        int cnt = 0;
         try{
-            stringer.array();
-            for(String res : result)
-            {
-                stringer.object().key("id").value(cnt++)
-                        .key("question").value(question)
-                        .key("answer").value(res).endObject();
+            if(!flightCode.equals("")){   //获取航班号
+                if(result.size() != 0){
+                    stringer.array();
+                    for(String res : result)
+                    {
+                        stringer.object().key("id").value(flightId.get(cnt))
+                                .key("question").value(question)
+                                .key("answer").value(res)
+                                .key("direction").value(direction.get(cnt++))
+                                .endObject();
+                    }
+                    stringer.endArray();
+                }else{
+                    String defaultAnswer = Service.getDefaultAnswer();
+                    System.out.println("defaultAnswer:"+defaultAnswer);
+                    stringer.array();
+                    stringer.object().key("id").value(0)
+                            .key("question").value(question)
+                            .key("answer").value("您输入的航班号有误,请重新输入!")
+                            .endObject();
+                    stringer.endArray();
+                }
+            }else if(city.size() != 0 && flights.size() != 0){
+                if(result.size() != 0){
+                    stringer.array();
+                    for(String res : result)
+                    {
+                        stringer.object().key("id").value(cnt)
+                                .key("question").value(question)
+                                .key("answer").value(res)
+                                .key("direction").value(direction.get(cnt++))
+                                .endObject();
+                    }
+                    stringer.endArray();
+                }else{
+                    String defaultAnswer = Service.getDefaultAnswer();
+                    stringer.array();
+                    stringer.object().key("id").value(0)
+                            .key("question").value(question)
+                            .key("answer").value(defaultAnswer)
+                            .endObject();
+                    stringer.endArray();
+                }
+            }else{
+                stringer.array();
+                for(String res : result)
+                {
+                    stringer.object().key("id").value(cnt++)
+                            .key("question").value(question)
+                            .key("answer").value(res)
+                            .endObject();
+                }
+                stringer.endArray();
             }
-            stringer.endArray();
         }catch (Exception e){}
         response.getOutputStream().write(stringer.toString().getBytes("UTF-8"));
         response.setContentType("text/json; charset=UTF-8");  //JSON的类型为text/json

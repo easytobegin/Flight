@@ -173,7 +173,7 @@ public class Service {
 		return answer;
 	}
 	
-	private static String getDefaultAnswer(){
+	public static String getDefaultAnswer(){
 		String[] answer = {
 			"是在下才疏学浅,要不您换种问法?",
 			"时代在进步,我也要努力学习才是。",

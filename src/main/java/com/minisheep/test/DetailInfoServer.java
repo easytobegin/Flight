@@ -43,10 +43,11 @@ public class DetailInfoServer extends HttpServlet {
         System.out.println("request method:" + method);
 
         //PrintWriter out = response.getWriter();
-        String flightCode = request.getParameter("detailbycode");  //这里传递的是航班号
+        String question = request.getParameter("detailbycode");  //这里传递的是航班号
 
         Chat chat = new Chat();
         //out.print(question);
+        String flightCode = Chat.getFlightId(question);  //先获取航班号
         List<BaseFlightInfo> result = Chat.detailFlightInfoByCode(flightCode);
 
         JSONStringer stringer = new JSONStringer();

@@ -244,6 +244,7 @@ public class MysqlUtil {
 				 * 
 				 * flight.getScheduleTime() + ",实际起飞时间:" + flight.getActualTime() + ",航班状态:" + status;
 				 */
+				flight.setFlightId(rs.getInt("flightid"));
 				if(rs.getString("actualtime") != null){
 					String afterDeal = ToolsUtil.removeDotZero(rs.getString("actualtime"));
 					flight.setActualTime(afterDeal); //实际起飞时间
@@ -626,4 +627,7 @@ public class MysqlUtil {
 		return result;
 		//select description from base_irregularcode where irregularcode = "100010";
 	}
+
+	//根据航班号FlightId查询数据(待完成)
+
 }

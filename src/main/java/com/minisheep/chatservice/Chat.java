@@ -38,20 +38,13 @@ public class Chat {
 
 
     //分词，并返回分词后的结果
-    public String[] cutWordsResult(String question) throws IOException {
+    public static String[] cutWordsResult(String question) throws IOException {
         String result = Service.cutWords(question);  //分词结果
 
         String[] str = result.split("\\|");  //根据分词结果判断用户是否是要查询航班动态?
         return str;
     }
 
-
-    public int FlightCategoryCode(String[] cutWordResult) throws IOException {  //根据问题回复航班分类，推荐相应答案
-        for (int i = 0; i < cutWordResult.length; i++) {
-
-        }
-        return 0;
-    }
 
     public static String changeMulToOne(String originRequest) {  //把多种问法通过预处理变成统一的一种格式,再去查询
         String resultQuestion = ""; //最后统一的格式
@@ -80,6 +73,11 @@ public class Chat {
         List<BaseFlightInfo> flights = new ArrayList<BaseFlightInfo>();
         flights = search.searchFlightname(FlightCode);
         return flights;
+    }
+
+    //待完成
+    public static List<BaseFlightInfo> detailFlightInfoByFlightId(String FlightId){  //根据唯一的主键flightId返回所有信息
+        return null;
     }
 
     public static List<BaseFlightInfo> detailFlightInfoByCity(List<String> cityName){
@@ -185,17 +183,17 @@ public class Chat {
                 //answer += "找不到该航班抵达的相关信息,您是否需要查询的是查询该航班的起飞相关信息?";
             }else if(questionCategory.equals("登机口")){
                 for (BaseFlightInfo flight : flights) {
-                    answer = "航班号:" + flight.getCarrier() + flight.getFlight() + " 登机口为:" + flight.getGate() + "  信息最后更新时间为:" + flight.getLastUpdated();
+                    answer = "航班号:" + flight.getCarrier() + flight.getFlight() + " 登机口为:" + flight.getGate();
                     flightInfoResult.add(answer);
                 }
             }else if(questionCategory.equals("候机楼")){
                 for (BaseFlightInfo flight : flights) {
-                    answer = "航班号:" + flight.getCarrier() + flight.getFlight() + " 您的所查询航班的航站楼为:" + flight.getTerminal() + "航站楼" + "  信息最后更新时间为:" + flight.getLastUpdated();
+                    answer = "航班号:" + flight.getCarrier() + flight.getFlight() + " 您的所查询航班的航站楼为:" + flight.getTerminal() + "航站楼";
                     flightInfoResult.add(answer);
                 }
             }else if(questionCategory.equals("状态")){
                 for(BaseFlightInfo flight : flights){
-                    answer = "航班号:" + flight.getCarrier() + flight.getFlight() + " 您所查询航班的当前状态为:" + MysqlUtil.codeTodescription(flight.getFlightStatus()) + "  信息最后更新时间为:" + flight.getLastUpdated();
+                    answer = "航班号:" + flight.getCarrier() + flight.getFlight() + " 您所查询航班的当前状态为:" + MysqlUtil.codeTodescription(flight.getFlightStatus());
                     flightInfoResult.add(answer);
                 }
             }else if(questionCategory.equals("检票口")){
@@ -206,7 +204,7 @@ public class Chat {
                     }else{
                         checkinCounter = flight.getCheckinCounter();
                     }
-                    answer = "航班号:" + flight.getCarrier() + flight.getFlight() + " 该航班在 " + checkinCounter + " 值机柜台检票" + "  信息最后更新时间为:" + flight.getLastUpdated();
+                    answer = "航班号:" + flight.getCarrier() + flight.getFlight() + " 该航班在 " + checkinCounter + " 值机柜台检票";
                     flightInfoResult.add(answer);
                 }
             }else if(questionCategory.equals("开始检票时间")){
@@ -375,9 +373,10 @@ public class Chat {
         if (baseFlightInfos.size() == 0 && cityName.size() != 0) {
             System.out.println("没有此航班的动态信息!");
             //break;
-            answer = "没有此航班的动态信息!";
+            answer = "没有此航班的动态信息,只提供与本航站楼(厦门)相关数据的查询!";
             flightInfoResult.add(answer);
-            System.out.println("没有此航班的动态信息!");
+            System.out.println("没有此航班的动态信息,只提供与本航站楼(厦门)相关数据的查询!");
+            return flightInfoResult;
         }
         boolean AD = false;  //是问进港还是出港
 
@@ -440,17 +439,17 @@ public class Chat {
             //answer += "找不到该航班抵达的相关信息,您是否需要查询的是查询该航班的起飞相关信息?";
         }else if(questionCategory.equals("登机口")){
             for (BaseFlightInfo flight : baseFlightInfos) {
-                answer = "航班号:" + flight.getCarrier() + flight.getFlight() + " 登机口为:" + flight.getGate() + "  信息最后更新时间为:" + flight.getLastUpdated();
+                answer = "航班号:" + flight.getCarrier() + flight.getFlight() + " 登机口为:" + flight.getGate();
                 flightInfoResult.add(answer);
             }
         }else if(questionCategory.equals("候机楼")){
             for (BaseFlightInfo flight : baseFlightInfos) {
-                answer = "航班号:" + flight.getCarrier() + flight.getFlight() + " 您的所查询航班的航站楼为:" + flight.getTerminal() + "航站楼" + "  信息最后更新时间为:" + flight.getLastUpdated();
+                answer = "航班号:" + flight.getCarrier() + flight.getFlight() + " 您的所查询航班的航站楼为:" + flight.getTerminal() + "航站楼";
                 flightInfoResult.add(answer);
             }
         }else if(questionCategory.equals("状态")){
             for(BaseFlightInfo flight : baseFlightInfos){
-                answer = "航班号:" + flight.getCarrier() + flight.getFlight() + " 您所查询航班的当前状态为:" + MysqlUtil.codeTodescription(flight.getFlightStatus()) + "  信息最后更新时间为:" + flight.getLastUpdated();
+                answer = "航班号:" + flight.getCarrier() + flight.getFlight() + " 您所查询航班的当前状态为:" + MysqlUtil.codeTodescription(flight.getFlightStatus());
                 flightInfoResult.add(answer);
             }
         }else if(questionCategory.equals("检票口")){
@@ -475,7 +474,7 @@ public class Chat {
                             flight.getScheduleCheckinOpen();
                     flightInfoResult.add(answer);
                 }else{
-                    answer = "暂无该航班值机开始的时间,请稍后查询!";
+                    answer = "暂无该航班值机开始的时间,请稍后查询!(只提供从本航站楼(厦门)出发航班的值机时间)";
                     flightInfoResult.add(answer);
                 }
             }
@@ -490,7 +489,7 @@ public class Chat {
                             flight.getScheduleCheckinClose();
                     flightInfoResult.add(answer);
                 }else{
-                    answer = "暂无该航班值机结束的时间,请稍后查询!";
+                    answer = "暂无该航班值机结束的时间,请稍后查询!(只提供从本航站楼(厦门)出发航班的值机时间)";
                     flightInfoResult.add(answer);
                 }
             }
@@ -505,7 +504,7 @@ public class Chat {
                             + flight.getCarouselScheduleOpen();
                     flightInfoResult.add(answer);
                 }else{
-                    answer = "暂无该航班行李传送带开始的时间";
+                    answer = "暂无该航班行李传送带开始的时间(只提供本航站楼(厦门)行李传送带相关信息)";
                     flightInfoResult.add(answer);
                 }
             }
@@ -520,7 +519,7 @@ public class Chat {
                             + flight.getCarouselScheduleClose();
                     flightInfoResult.add(answer);
                 }else{
-                    answer = "暂无该航班行李传送带停止的时间";
+                    answer = "暂无该航班行李传送带停止的时间(只提供本航站楼(厦门)行李传送带相关信息)";
                     flightInfoResult.add(answer);
                 }
             }
@@ -573,6 +572,31 @@ public class Chat {
         return flightInfoResult;
     }
 
+    public static String getFlightId(String question) throws IOException {  //问题返回FlightId
+        String[] names = cutWordsResult(question);
+        String flightIdName = "";
+        for (int i = 0; i < names.length; i++) {
+            if (ToolsUtil.RegexFlightId(names[i]) == true) {
+                flightIdName = ToolsUtil.lowerToupper(names[i]);
+                break;
+            }
+        }
+        return flightIdName;
+    }
+
+    public static List<String> getDoubleCity(String question) throws IOException {
+        List<String> cityname = new ArrayList<String>();
+        String[] names = cutWordsResult(question);
+        for (int i = 0; i < names.length; i++) {
+            SearchIATACodeByCNName searchIATACodeByCNName = new SearchIATACodeByCNName();
+            String result = searchIATACodeByCNName.searchIataCodebyCNname(names[i]);  //遍历
+            if (!result.equals("")) {  //有城市英文简写
+                cityname.add(result);
+            }
+        }
+        return cityname;
+    }
+
     public List<String> getAnswer(String question) throws IOException {
         List<String> answer = new ArrayList<String>();
         String afterDeal = changeMulToOne(question);  //同义词搜索,归一
@@ -603,8 +627,8 @@ public class Chat {
             for (int i = 0; i < names.length; i++) {
                 if (ToolsUtil.RegexFlightId(names[i]) == true) {
                     flightIdName = ToolsUtil.lowerToupper(names[i]);
-                    if(flightIdName.length() < 4 && !afterDeal.equals("航空公司"))
-                        continue;
+//                    if(flightIdName.length() < 4 && !afterDeal.equals("航空公司"))
+//                        continue;
                     answer = dealWithFlightCodeQuestion(flightIdName, afterDeal);
                     //System.out.println("变成大写后的FlightId:" + flightIdName);
 

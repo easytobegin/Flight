@@ -12,8 +12,12 @@ import com.minisheep.util.MysqlUtil;
 
 public class SearchFlight {
 	public List<BaseFlightInfo> searchFlightname(String flightname){  //比如SC4770
+		String carrier = "";
+		if(flightname.length() < 2){
+			flightname += "A";  //随便加个字符
+		}
 		int length = flightname.length();
-		String carrier = flightname.substring(0,2);  //SC
+		carrier = flightname.substring(0,2);  //SC
 		String flight = flightname.substring(2,length);  //4770
 
 		//select SCHEDULETIME,ESTIMATETIME from Flight where CARRIER = "MF" and FLIGHT = "892" and DIRECTION = "A" and OPDATE = "日期";

@@ -19,7 +19,7 @@ import java.util.Scanner;
  */
 public class ClientUtil {
     //服务器端的url
-    private static String PATH = "http://localhost:8080/testdemo";
+    private static String path = "http://localhost:8080/testdemo";
     private static URL url;
 
     public ClientUtil() {
@@ -27,7 +27,7 @@ public class ClientUtil {
 
     static {
         try {
-            url = new URL(PATH);
+            url = new URL(path);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -37,6 +37,7 @@ public class ClientUtil {
     params填写的URL的参数encode字节编码
      */
     public static String sendPostMessage(Map<String, String> params, String encode) {
+
         StringBuffer stringBuffer = new StringBuffer();
 
         if (params != null && !params.isEmpty()) {
