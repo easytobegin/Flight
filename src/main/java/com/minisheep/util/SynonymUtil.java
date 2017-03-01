@@ -78,7 +78,7 @@ public class SynonymUtil {
     }
 
     public static void main(String[] args) {
-        String indexPath = "/Users/minisheep/Documents/testindex";
+        String indexPath = "/Users/minisheep/Documents/testindex";   //迁移时修改
         String input = "厦门到沈阳的飞机什么时候能飞离?";
         System.out.println("**********************");
         try {

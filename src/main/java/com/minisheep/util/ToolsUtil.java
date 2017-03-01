@@ -47,4 +47,8 @@ public class ToolsUtil {
 		return str.substring(0,str.length()-2);
 		//return null;
 	}
+
+	public static String getHourAndMin(String str){
+		return str.substring(11,16);
+	}
 }

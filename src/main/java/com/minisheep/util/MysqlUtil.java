@@ -17,9 +17,9 @@ import java.util.List;
  */
 public class MysqlUtil {
 	private Connection getConnection(){  //自己建的数据库
-		String url = "jdbc:mysql://localhost:3306/LuceneTestDemo?characterEncoding=utf8";
-		String username = "root";
-		String password = "220015";
+		String url = "jdbc:mysql://10.0.36.17:3376/FlightBot?characterEncoding=utf8";  //服务器
+		String username = "chenyang";
+		String password = "cyang1994,";
 		Connection connection = null;
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
@@ -32,9 +32,9 @@ public class MysqlUtil {
 	}
 
 	private Connection getConnectionFlight(){  //航班数据库
-		String url = "jdbc:mysql://10.1.16.20:3306/aiidb?characterEncoding=utf8";
+		String url = "jdbc:mysql://10.0.36.17:3376/aiidb?characterEncoding=utf8";
 		String username = "aii";
-		String password = "_Aii123,";
+		String password = "_Aiis123,";
 		Connection connection = null;
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
@@ -272,6 +272,7 @@ public class MysqlUtil {
 				flight.setFlightStatus(rs.getString("flightstatus"));  //航班状态
 				flight.setCheckinCounter(rs.getString("checkincounter")); //检票口
 				flight.setIrregularCode(rs.getString("irregularcode"));
+				flight.setOpdate(rs.getString("opdate"));
 
 				if(rs.getString("schedulecheckinopen") != null){
 					String afterDeal = ToolsUtil.removeDotZero(rs.getString("schedulecheckinopen"));
@@ -490,7 +491,7 @@ public class MysqlUtil {
 					baseFlightInfo.setGateEstimateClose(afterDeal);
 				}
 
-
+				baseFlightInfo.setOpdate(rs.getString("opdate"));
 				baseFlightInfo.setFlightId(rs.getInt("flightid"));  //FLIGHTID
 				baseFlightInfo.setCarrier(rs.getString("carrier"));
 				baseFlightInfo.setFlight(rs.getString("flight"));

@@ -5,6 +5,7 @@ import com.minisheep.bean.QAresponse;
 import com.minisheep.chatservice.Chat;
 import com.minisheep.chatservice.Service;
 import com.minisheep.util.MysqlUtil;
+import com.minisheep.util.ToolsUtil;
 import org.json.JSONStringer;
 
 import javax.servlet.ServletException;
@@ -96,12 +97,13 @@ public class ServerTest extends HttpServlet {
                     }
                     stringer.endArray();
                 }else{
-                    String defaultAnswer = Service.getDefaultAnswer();
-                    System.out.println("defaultAnswer:"+defaultAnswer);
+                    //String defaultAnswer = Service.getDefaultAnswer();
+                    //System.out.println("defaultAnswer:"+defaultAnswer);
                     stringer.array();
                     stringer.object().key("flightcode").value(0)
                             .key("question").value(question)
-                            .key("answer").value("您输入的航班号有误,请重新输入!")
+                            .key("answer").value("暂无该航班号的此类信息,请稍后再试或者您可以换种问法后再次查询!(例如:把抵达改成起飞等)")
+                            .key("direction").value(-1)
                             .endObject();
                     stringer.endArray();
                 }
@@ -123,6 +125,7 @@ public class ServerTest extends HttpServlet {
                     stringer.object().key("flightcode").value(0)
                             .key("question").value(question)
                             .key("answer").value(defaultAnswer)
+                            .key("direction").value(-1)
                             .endObject();
                     stringer.endArray();
                 }
@@ -133,6 +136,7 @@ public class ServerTest extends HttpServlet {
                     stringer.object().key("flightcode").value(cnt++)
                             .key("question").value(question)
                             .key("answer").value(res)
+                            .key("direction").value(-1)
                             .endObject();
                 }
                 stringer.endArray();

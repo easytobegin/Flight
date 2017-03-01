@@ -54,7 +54,7 @@ public class Service {
 		List<Knowledge> knowledges = MysqlUtil.findAllKownLedge();
 		Directory directory = null;
 		IndexWriter indexWriter = null;
-		String pathname = "/Users/minisheep/Documents/index";
+		String pathname = "/Users/minisheep/Documents/index";   //迁移到服务器时修改
 		try{
 			directory = FSDirectory.open(new File(pathname));
 			IndexWriterConfig iWriterConfig = new IndexWriterConfig(Version.LUCENE_46, new IKAnalyzer(true));
