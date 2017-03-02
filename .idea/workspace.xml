@@ -7,22 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd731358-32ca-449a-824d-d7ccf5e62346" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/FlightPro-1.0-SNAPSHOT.war" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/minisheep/chatService/Chat.class" afterPath="$PROJECT_DIR$/build/classes/main/com/minisheep/chatService/Chat.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/minisheep/test/ServerTest.class" afterPath="$PROJECT_DIR$/build/classes/main/com/minisheep/test/ServerTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/minisheep/util/MysqlUtil.class" afterPath="$PROJECT_DIR$/build/classes/main/com/minisheep/util/MysqlUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/Gradle _ com.minisheep _ FlightPro-1.0-SNAPSHOT.war (exploded).war" afterPath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/Gradle _ com.minisheep _ FlightPro-1.0-SNAPSHOT.war (exploded).war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/myExt.dic" afterPath="$PROJECT_DIR$/build/resources/main/myExt.dic" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/stopword.dic" afterPath="$PROJECT_DIR$/build/resources/main/stopword.dic" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Service.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Service.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/test/ServerTest.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/test/ServerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/util/CreateIndex.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/util/CreateIndex.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/util/SynonymUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/util/SynonymUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/util/ToolsUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/util/ToolsUtil.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/myExt.dic" afterPath="$PROJECT_DIR$/src/main/resources/myExt.dic" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/stopword.dic" afterPath="$PROJECT_DIR$/src/main/resources/stopword.dic" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -124,61 +114,88 @@
       <file leaf-file-name="Chat.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2970">
-              <caret line="53" column="23" lean-forward="false" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+            <state relative-caret-position="5209">
+              <caret line="446" column="24" lean-forward="false" selection-start-line="446" selection-start-column="24" selection-end-line="446" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3023#3024#0" expanded="true" />
+                <element signature="e#2567#2583#0" expanded="true" />
+                <element signature="e#3225#3241#0" expanded="true" />
+                <element signature="e#4175#4183#0" expanded="true" />
+                <element signature="e#4267#4283#0" expanded="true" />
+                <element signature="e#4336#4352#0" expanded="true" />
+                <element signature="e#24941#24957#0" expanded="true" />
+                <element signature="e#25011#25027#0" expanded="true" />
+                <element signature="e#25084#25092#0" expanded="true" />
+                <element signature="e#37238#37246#0" expanded="true" />
+                <element signature="e#37789#37797#0" expanded="true" />
+                <element signature="e#37974#37982#0" expanded="true" />
+                <element signature="e#41280#41288#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DetailInfoServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/test/DetailInfoServer.java">
+      <file leaf-file-name="stopword.dic" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/stopword.dic">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-318">
-              <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+            <state relative-caret-position="130">
+              <caret line="666" column="2" lean-forward="true" selection-start-line="666" selection-start-column="2" selection-end-line="666" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myExt.dic" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/myExt.dic">
+      <file leaf-file-name="MySearch.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/MySearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6">
-              <caret line="43" column="3" lean-forward="true" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
+            <state relative-caret-position="159">
+              <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/test/ClientUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="32" column="9" lean-forward="false" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchFlight.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchFlight.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchFlightDetail.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchFlightDetail.java">
+      <file leaf-file-name="MysqlUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+              <caret line="505" column="12" lean-forward="true" selection-start-line="505" selection-start-column="12" selection-end-line="505" selection-end-column="12" />
+              <folding>
+                <marker date="1488441085000" expanded="true" signature="1759:1782" ph="select * fro... knowledge" />
+                <marker date="1488441085000" expanded="true" signature="2578:2655" ph="select chat_... chat_log" />
+                <marker date="1488441085000" expanded="true" signature="3278:3348" ph="select answe... knowledge_sub" />
+                <marker date="1488441085000" expanded="true" signature="3943:3998" ph="select joke_... joke" />
+                <marker date="1488441085000" expanded="true" signature="4613:4702" ph="insert into chat_log... " />
+                <marker date="1488441085000" expanded="true" signature="5306:5367" ph="insert into knowledge... " />
+                <marker date="1488441085000" expanded="true" signature="6315:6374" ph="select * fro... Flight" />
+                <marker date="1488441085000" expanded="true" signature="11725:11782" ph="select iatac... base_airport" />
+                <marker date="1488441085000" expanded="true" signature="12414:12471" ph="select displ... base_airport" />
+                <marker date="1488441085000" expanded="true" signature="13124:13187" ph="select * fro... t_flightinfo" />
+                <marker date="1488441085000" expanded="true" signature="18340:18392" ph="select * fro... base_flightstatus" />
+                <marker date="1488441085000" expanded="true" signature="18976:19029" ph="select COUNT... t_flightinfo" />
+                <marker date="1488441085000" expanded="true" signature="19639:19705" ph="select descr... base_flighttask" />
+                <marker date="1488441085000" expanded="true" signature="20262:20313" ph="select cnnam... base_airlines" />
+                <marker date="1488441085000" expanded="true" signature="20848:20914" ph="select descr... base_irregularcode" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateIndex.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/CreateIndex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="73" column="35" lean-forward="true" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SynonymUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/SynonymUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="83" column="13" lean-forward="true" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -187,40 +204,41 @@
       <file leaf-file-name="Service.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Service.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-948">
+            <state relative-caret-position="390">
               <caret line="53" column="60" lean-forward="false" selection-start-line="53" selection-start-column="60" selection-end-line="53" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchIATACodeByCNName.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchIATACodeByCNName.java">
+      <file leaf-file-name="IKAnalyzer.cfg.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/IKAnalyzer.cfg.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state relative-caret-position="165">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ToolsUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/ToolsUtil.java">
+      <file leaf-file-name="BaseAirport.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/bean/BaseAirport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="354">
+              <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
               <folding>
-                <element signature="e#1346#1347#0" expanded="true" />
+                <element signature="e#2179#2180#0" expanded="true" />
+                <element signature="e#2224#2225#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JsonServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/test/JsonServlet.java">
+      <file leaf-file-name="myExt.dic" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/myExt.dic">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+            <state relative-caret-position="384">
+              <caret line="73" column="4" lean-forward="false" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -251,6 +269,7 @@
       <find>flightid</find>
       <find>save</find>
       <find>getOpdate</find>
+      <find>getGateEstimateOpen</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -632,7 +651,6 @@
         <option value="$PROJECT_DIR$/src/main/java/stopword.dic" />
         <option value="$PROJECT_DIR$/src/myExt.dic" />
         <option value="$PROJECT_DIR$/src/IKAnalyzer.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/util/CreateIndex.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/bean/Person.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/bean/QAresponse.java" />
@@ -645,10 +663,11 @@
         <option value="$PROJECT_DIR$/src/main/resources/stopword.dic" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Service.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/util/SynonymUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/util/ToolsUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/util/CreateIndex.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java" />
         <option value="$PROJECT_DIR$/src/main/resources/myExt.dic" />
+        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java" />
       </list>
     </option>
   </component>
@@ -666,10 +685,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="303" />
-    <option name="y" value="23" />
+    <option name="x" value="-60" />
+    <option name="y" value="25" />
     <option name="width" value="1280" />
-    <option name="height" value="739" />
+    <option name="height" value="734" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -702,90 +721,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="FlightPro">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="newFlightPro">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="FlightPro">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="newFlightPro">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="FlightPro">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="FlightPro_main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="webapp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="FlightPro">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="FlightPro_main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="java">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="com/minisheep">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1200,6 +1135,90 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="com.intellij.database" />
               <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FlightPro">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="newFlightPro">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FlightPro">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="newFlightPro">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FlightPro">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FlightPro_main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="webapp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FlightPro">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FlightPro_main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="java">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/minisheep">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -1870,12 +1889,13 @@
       <workItem from="1487032587696" duration="12048000" />
       <workItem from="1487119897984" duration="35566000" />
       <workItem from="1487551086394" duration="33105000" />
-      <workItem from="1487723527418" duration="46715000" />
+      <workItem from="1487723527418" duration="51071000" />
+      <workItem from="1488435605186" duration="6213000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="424913000" />
+    <option name="totallyTimeSpent" value="435482000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1887,8 +1907,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="303" y="23" width="1280" height="739" extended-state="0" />
-    <editor active="true" />
+    <frame x="-60" y="25" width="1280" height="734" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1906,13 +1926,13 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38184664" sideWeight="0.496875" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36335403" sideWeight="0.6039063" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3630673" sideWeight="0.6039063" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22515528" sideWeight="0.49609375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21439749" sideWeight="0.49609375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.259375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1940,7 +1960,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java</url>
-          <line>751</line>
+          <line>791</line>
           <properties />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
@@ -2075,13 +2095,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/myExt.dic" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/IKAnalyzer.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -2098,25 +2111,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/stopword.dic">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="666" column="2" lean-forward="true" selection-start-line="666" selection-start-column="2" selection-end-line="666" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/bean/BaseAirport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
-          <folding>
-            <element signature="e#2179#2180#0" expanded="false" />
-            <element signature="e#2224#2225#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2143,7 +2137,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2151,54 +2144,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/SynonymUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="83" column="13" lean-forward="true" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-93">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <marker date="1487819002000" expanded="true" signature="1759:1782" ph="select * fro... knowledge" />
-            <marker date="1487819002000" expanded="true" signature="2578:2655" ph="select chat_... chat_log" />
-            <marker date="1487819002000" expanded="true" signature="3278:3348" ph="select answe... knowledge_sub" />
-            <marker date="1487819002000" expanded="true" signature="3943:3998" ph="select joke_... joke" />
-            <marker date="1487819002000" expanded="true" signature="4613:4702" ph="insert into chat_log... " />
-            <marker date="1487819002000" expanded="true" signature="5306:5367" ph="insert into knowledge... " />
-            <marker date="1487819002000" expanded="true" signature="6315:6374" ph="select * fro... Flight" />
-            <marker date="1487819002000" expanded="true" signature="11667:11724" ph="select iatac... base_airport" />
-            <marker date="1487819002000" expanded="true" signature="12356:12413" ph="select displ... base_airport" />
-            <marker date="1487819002000" expanded="true" signature="13066:13129" ph="select * fro... t_flightinfo" />
-            <marker date="1487819002000" expanded="true" signature="18216:18268" ph="select * fro... base_flightstatus" />
-            <marker date="1487819002000" expanded="true" signature="18852:18905" ph="select COUNT... t_flightinfo" />
-            <marker date="1487819002000" expanded="true" signature="19515:19581" ph="select descr... base_flighttask" />
-            <marker date="1487819002000" expanded="true" signature="20138:20189" ph="select cnnam... base_airlines" />
-            <marker date="1487819002000" expanded="true" signature="20724:20790" ph="select descr... base_irregularcode" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/MySearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/CreateIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="98" column="17" lean-forward="false" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -2213,17 +2158,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/test/JsonServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="660">
+          <caret line="53" column="5" lean-forward="false" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/test/DetailInfoServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-318">
+        <state relative-caret-position="135">
           <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#663#664#0" expanded="false" />
+            <element signature="e#686#687#0" expanded="false" />
+            <element signature="e#729#730#0" expanded="false" />
+            <element signature="e#760#761#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2231,14 +2184,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="32" column="9" lean-forward="false" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchFlight.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        <state relative-caret-position="195">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -2246,7 +2201,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchFlightDetail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -2259,17 +2214,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-948">
-          <caret line="53" column="60" lean-forward="false" selection-start-line="53" selection-start-column="60" selection-end-line="53" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/ToolsUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
+        <state relative-caret-position="309">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
             <element signature="e#1346#1347#0" expanded="true" />
@@ -2277,21 +2224,115 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/IKAnalyzer.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/bean/BaseAirport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
+          <folding>
+            <element signature="e#2179#2180#0" expanded="true" />
+            <element signature="e#2224#2225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/MySearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/SynonymUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="83" column="13" lean-forward="true" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/CreateIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="73" column="35" lean-forward="true" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="505" column="12" lean-forward="true" selection-start-line="505" selection-start-column="12" selection-end-line="505" selection-end-column="12" />
+          <folding>
+            <marker date="1488441085000" expanded="true" signature="1759:1782" ph="select * fro... knowledge" />
+            <marker date="1488441085000" expanded="true" signature="2578:2655" ph="select chat_... chat_log" />
+            <marker date="1488441085000" expanded="true" signature="3278:3348" ph="select answe... knowledge_sub" />
+            <marker date="1488441085000" expanded="true" signature="3943:3998" ph="select joke_... joke" />
+            <marker date="1488441085000" expanded="true" signature="4613:4702" ph="insert into chat_log... " />
+            <marker date="1488441085000" expanded="true" signature="5306:5367" ph="insert into knowledge... " />
+            <marker date="1488441085000" expanded="true" signature="6315:6374" ph="select * fro... Flight" />
+            <marker date="1488441085000" expanded="true" signature="11725:11782" ph="select iatac... base_airport" />
+            <marker date="1488441085000" expanded="true" signature="12414:12471" ph="select displ... base_airport" />
+            <marker date="1488441085000" expanded="true" signature="13124:13187" ph="select * fro... t_flightinfo" />
+            <marker date="1488441085000" expanded="true" signature="18340:18392" ph="select * fro... base_flightstatus" />
+            <marker date="1488441085000" expanded="true" signature="18976:19029" ph="select COUNT... t_flightinfo" />
+            <marker date="1488441085000" expanded="true" signature="19639:19705" ph="select descr... base_flighttask" />
+            <marker date="1488441085000" expanded="true" signature="20262:20313" ph="select cnnam... base_airlines" />
+            <marker date="1488441085000" expanded="true" signature="20848:20914" ph="select descr... base_irregularcode" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/stopword.dic">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="666" column="2" lean-forward="true" selection-start-line="666" selection-start-column="2" selection-end-line="666" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/myExt.dic">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="43" column="3" lean-forward="true" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
+        <state relative-caret-position="384">
+          <caret line="73" column="4" lean-forward="false" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="53" column="60" lean-forward="false" selection-start-line="53" selection-start-column="60" selection-end-line="53" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2970">
-          <caret line="53" column="23" lean-forward="false" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+        <state relative-caret-position="5209">
+          <caret line="446" column="24" lean-forward="false" selection-start-line="446" selection-start-column="24" selection-end-line="446" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3023#3024#0" expanded="true" />
+            <element signature="e#2567#2583#0" expanded="true" />
+            <element signature="e#3225#3241#0" expanded="true" />
+            <element signature="e#4175#4183#0" expanded="true" />
+            <element signature="e#4267#4283#0" expanded="true" />
+            <element signature="e#4336#4352#0" expanded="true" />
+            <element signature="e#24941#24957#0" expanded="true" />
+            <element signature="e#25011#25027#0" expanded="true" />
+            <element signature="e#25084#25092#0" expanded="true" />
+            <element signature="e#37238#37246#0" expanded="true" />
+            <element signature="e#37789#37797#0" expanded="true" />
+            <element signature="e#37974#37982#0" expanded="true" />
+            <element signature="e#41280#41288#0" expanded="true" />
           </folding>
         </state>
       </provider>

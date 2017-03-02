@@ -331,6 +331,7 @@ public class MysqlUtil {
 					String afterDeal = ToolsUtil.removeDotZero(rs.getString("gateestimateclose"));
 					flight.setGateEstimateClose(afterDeal);
 				}
+				flight.setCarouselCode(rs.getString("carouselcode"));
 				flight.setFlightTask(rs.getString("flighttask")); //航班任务状态
 				flights.add(flight);
 			}
@@ -506,6 +507,7 @@ public class MysqlUtil {
 				baseFlightInfo.setCheckinCounter(rs.getString("checkincounter")); //检票口
 				baseFlightInfo.setFlightTask(rs.getString("flighttask")); //航班任务状态
 				baseFlightInfo.setIrregularCode(rs.getString("irregularcode"));
+				baseFlightInfo.setCarouselCode(rs.getString("carouselcode"));
 				baseFlightInfos.add(baseFlightInfo);
 			}
 		}catch (Exception e) {
