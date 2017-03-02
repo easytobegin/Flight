@@ -7,12 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd731358-32ca-449a-824d-d7ccf5e62346" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/minisheep/chatService/Chat.class" afterPath="$PROJECT_DIR$/build/classes/main/com/minisheep/chatService/Chat.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/util/CreateIndex.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/util/CreateIndex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/myExt.dic" afterPath="$PROJECT_DIR$/src/main/resources/myExt.dic" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -114,8 +109,8 @@
       <file leaf-file-name="Chat.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5209">
-              <caret line="446" column="24" lean-forward="false" selection-start-line="446" selection-start-column="24" selection-end-line="446" selection-end-column="24" />
+            <state relative-caret-position="154">
+              <caret line="816" column="40" lean-forward="true" selection-start-line="816" selection-start-column="40" selection-end-line="816" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2567#2583#0" expanded="true" />
@@ -126,10 +121,10 @@
                 <element signature="e#24941#24957#0" expanded="true" />
                 <element signature="e#25011#25027#0" expanded="true" />
                 <element signature="e#25084#25092#0" expanded="true" />
-                <element signature="e#37238#37246#0" expanded="true" />
-                <element signature="e#37789#37797#0" expanded="true" />
-                <element signature="e#37974#37982#0" expanded="true" />
-                <element signature="e#41280#41288#0" expanded="true" />
+                <element signature="e#44772#44780#0" expanded="true" />
+                <element signature="e#45323#45331#0" expanded="true" />
+                <element signature="e#45508#45516#0" expanded="true" />
+                <element signature="e#48814#48822#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -685,8 +680,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-60" />
-    <option name="y" value="25" />
+    <option name="x" value="49" />
+    <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="734" />
   </component>
@@ -1890,12 +1885,12 @@
       <workItem from="1487119897984" duration="35566000" />
       <workItem from="1487551086394" duration="33105000" />
       <workItem from="1487723527418" duration="51071000" />
-      <workItem from="1488435605186" duration="6213000" />
+      <workItem from="1488435605186" duration="7997000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="435482000" />
+    <option name="totallyTimeSpent" value="437266000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1907,8 +1902,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-60" y="25" width="1280" height="734" extended-state="0" />
-    <editor active="false" />
+    <frame x="49" y="23" width="1280" height="734" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1932,7 +1927,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21439749" sideWeight="0.49609375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21439749" sideWeight="0.49609375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.259375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1960,7 +1955,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java</url>
-          <line>791</line>
+          <line>936</line>
           <properties />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
@@ -2317,8 +2312,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5209">
-          <caret line="446" column="24" lean-forward="false" selection-start-line="446" selection-start-column="24" selection-end-line="446" selection-end-column="24" />
+        <state relative-caret-position="154">
+          <caret line="816" column="40" lean-forward="true" selection-start-line="816" selection-start-column="40" selection-end-line="816" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2567#2583#0" expanded="true" />
@@ -2329,10 +2324,10 @@
             <element signature="e#24941#24957#0" expanded="true" />
             <element signature="e#25011#25027#0" expanded="true" />
             <element signature="e#25084#25092#0" expanded="true" />
-            <element signature="e#37238#37246#0" expanded="true" />
-            <element signature="e#37789#37797#0" expanded="true" />
-            <element signature="e#37974#37982#0" expanded="true" />
-            <element signature="e#41280#41288#0" expanded="true" />
+            <element signature="e#44772#44780#0" expanded="true" />
+            <element signature="e#45323#45331#0" expanded="true" />
+            <element signature="e#45508#45516#0" expanded="true" />
+            <element signature="e#48814#48822#0" expanded="true" />
           </folding>
         </state>
       </provider>
