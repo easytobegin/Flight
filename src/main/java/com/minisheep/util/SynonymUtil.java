@@ -83,7 +83,7 @@ public class SynonymUtil {
         System.out.println("**********************");
         try {
             String result = displayTokens(convertSynonym(analyzerChinese(input, true)));
-			CreateIndex.createIndex(indexPath);  //建立索引
+			//CreateIndex.createIndex(indexPath);  //建立索引
             System.out.println("result:"+ result);
             List<String> docs = MySearch.searchIndex(result, indexPath);
             for (String string : docs) {

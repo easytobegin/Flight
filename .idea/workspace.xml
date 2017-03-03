@@ -3,11 +3,17 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="Gradle : com.minisheep : FlightPro-1.0-SNAPSHOT.war" />
+      <artifact name="Gradle : com.minisheep : FlightPro-1.0-SNAPSHOT.war (exploded)" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd731358-32ca-449a-824d-d7ccf5e62346" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/FlightPro-1.0-SNAPSHOT.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/exploded/FlightPro-1.0-SNAPSHOT.war/Gradle _ com.minisheep _ FlightPro-1.0-SNAPSHOT.war (exploded).war" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/minisheep/util/SynonymUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/minisheep/util/SynonymUtil.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -109,8 +115,8 @@
       <file leaf-file-name="Chat.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="816" column="40" lean-forward="true" selection-start-line="816" selection-start-column="40" selection-end-line="816" selection-end-column="40" />
+            <state relative-caret-position="180">
+              <caret line="273" column="85" lean-forward="false" selection-start-line="273" selection-start-column="85" selection-end-line="273" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2567#2583#0" expanded="true" />
@@ -118,13 +124,13 @@
                 <element signature="e#4175#4183#0" expanded="true" />
                 <element signature="e#4267#4283#0" expanded="true" />
                 <element signature="e#4336#4352#0" expanded="true" />
-                <element signature="e#24941#24957#0" expanded="true" />
-                <element signature="e#25011#25027#0" expanded="true" />
-                <element signature="e#25084#25092#0" expanded="true" />
-                <element signature="e#44772#44780#0" expanded="true" />
-                <element signature="e#45323#45331#0" expanded="true" />
-                <element signature="e#45508#45516#0" expanded="true" />
-                <element signature="e#48814#48822#0" expanded="true" />
+                <element signature="e#25162#25178#0" expanded="true" />
+                <element signature="e#25232#25248#0" expanded="true" />
+                <element signature="e#25305#25313#0" expanded="true" />
+                <element signature="e#45651#45659#0" expanded="true" />
+                <element signature="e#46202#46210#0" expanded="true" />
+                <element signature="e#46387#46395#0" expanded="true" />
+                <element signature="e#49693#49701#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,24 +159,25 @@
       <file leaf-file-name="MysqlUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="505" column="12" lean-forward="true" selection-start-line="505" selection-start-column="12" selection-end-line="505" selection-end-column="12" />
+            <state relative-caret-position="1698">
+              <caret line="526" column="42" lean-forward="false" selection-start-line="526" selection-start-column="25" selection-end-line="526" selection-end-column="42" />
               <folding>
-                <marker date="1488441085000" expanded="true" signature="1759:1782" ph="select * fro... knowledge" />
-                <marker date="1488441085000" expanded="true" signature="2578:2655" ph="select chat_... chat_log" />
-                <marker date="1488441085000" expanded="true" signature="3278:3348" ph="select answe... knowledge_sub" />
-                <marker date="1488441085000" expanded="true" signature="3943:3998" ph="select joke_... joke" />
-                <marker date="1488441085000" expanded="true" signature="4613:4702" ph="insert into chat_log... " />
-                <marker date="1488441085000" expanded="true" signature="5306:5367" ph="insert into knowledge... " />
-                <marker date="1488441085000" expanded="true" signature="6315:6374" ph="select * fro... Flight" />
-                <marker date="1488441085000" expanded="true" signature="11725:11782" ph="select iatac... base_airport" />
-                <marker date="1488441085000" expanded="true" signature="12414:12471" ph="select displ... base_airport" />
-                <marker date="1488441085000" expanded="true" signature="13124:13187" ph="select * fro... t_flightinfo" />
-                <marker date="1488441085000" expanded="true" signature="18340:18392" ph="select * fro... base_flightstatus" />
-                <marker date="1488441085000" expanded="true" signature="18976:19029" ph="select COUNT... t_flightinfo" />
-                <marker date="1488441085000" expanded="true" signature="19639:19705" ph="select descr... base_flighttask" />
-                <marker date="1488441085000" expanded="true" signature="20262:20313" ph="select cnnam... base_airlines" />
-                <marker date="1488441085000" expanded="true" signature="20848:20914" ph="select descr... base_irregularcode" />
+                <marker date="1488505066000" expanded="true" signature="1759:1782" ph="select * fro... knowledge" />
+                <marker date="1488505066000" expanded="true" signature="2578:2655" ph="select chat_... chat_log" />
+                <marker date="1488505066000" expanded="true" signature="3278:3348" ph="select answe... knowledge_sub" />
+                <marker date="1488505066000" expanded="true" signature="3943:3998" ph="select joke_... joke" />
+                <marker date="1488505066000" expanded="true" signature="4613:4702" ph="insert into chat_log... " />
+                <marker date="1488505066000" expanded="true" signature="5306:5367" ph="insert into knowledge... " />
+                <marker date="1488505066000" expanded="true" signature="6315:6374" ph="select * fro... Flight" />
+                <marker date="1488505066000" expanded="true" signature="11725:11782" ph="select iatac... base_airport" />
+                <marker date="1488505066000" expanded="true" signature="12414:12471" ph="select displ... base_airport" />
+                <marker date="1488505066000" expanded="true" signature="13124:13187" ph="select * fro... t_flightinfo" />
+                <marker date="1488505066000" expanded="true" signature="13124:13258" ph="select * fro... t_flightinfo" />
+                <marker date="1488505066000" expanded="true" signature="18565:18617" ph="select * fro... base_flightstatus" />
+                <marker date="1488505066000" expanded="true" signature="19201:19254" ph="select COUNT... t_flightinfo" />
+                <marker date="1488505066000" expanded="true" signature="19864:19930" ph="select descr... base_flighttask" />
+                <marker date="1488505066000" expanded="true" signature="20487:20538" ph="select cnnam... base_airlines" />
+                <marker date="1488505066000" expanded="true" signature="21073:21139" ph="select descr... base_irregularcode" />
               </folding>
             </state>
           </provider>
@@ -186,11 +193,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="SearchFlightDetail.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchFlightDetail.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="SynonymUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/SynonymUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="83" column="13" lean-forward="true" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+            <state relative-caret-position="115">
+              <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -206,24 +223,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IKAnalyzer.cfg.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/IKAnalyzer.cfg.xml">
+      <file leaf-file-name="ToolsUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/ToolsUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseAirport.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/bean/BaseAirport.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
+            <state relative-caret-position="705">
+              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding>
-                <element signature="e#2179#2180#0" expanded="true" />
-                <element signature="e#2224#2225#0" expanded="true" />
+                <element signature="e#1346#1347#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -265,6 +271,7 @@
       <find>save</find>
       <find>getOpdate</find>
       <find>getGateEstimateOpen</find>
+      <find>passby</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -657,11 +664,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/test/ServerTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/stopword.dic" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Service.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/util/SynonymUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/util/ToolsUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/util/CreateIndex.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java" />
         <option value="$PROJECT_DIR$/src/main/resources/myExt.dic" />
+        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/minisheep/util/SynonymUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java" />
       </list>
     </option>
@@ -680,9 +687,9 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="49" />
+    <option name="x" value="8" />
     <option name="y" value="23" />
-    <option name="width" value="1280" />
+    <option name="width" value="1381" />
     <option name="height" value="734" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -1224,7 +1231,7 @@
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.1484375" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -1885,12 +1892,12 @@
       <workItem from="1487119897984" duration="35566000" />
       <workItem from="1487551086394" duration="33105000" />
       <workItem from="1487723527418" duration="51071000" />
-      <workItem from="1488435605186" duration="7997000" />
+      <workItem from="1488435605186" duration="23709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="437266000" />
+    <option name="totallyTimeSpent" value="452978000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1902,7 +1909,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="23" width="1280" height="734" extended-state="0" />
+    <frame x="8" y="23" width="1381" height="734" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1929,10 +1936,10 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21439749" sideWeight="0.49609375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.259375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2404055" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.01328125" sideWeight="0.49126637" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.01230992" sideWeight="0.49126637" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1952,14 +1959,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java</url>
-          <line>936</line>
-          <properties />
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="41" />
     </breakpoint-manager>
     <watches-manager />
@@ -2193,29 +2192,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchFlightDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchIATACodeByCNName.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/ToolsUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="e#1346#1347#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2232,25 +2213,9 @@
         <state relative-caret-position="354">
           <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
           <folding>
-            <element signature="e#2179#2180#0" expanded="true" />
-            <element signature="e#2224#2225#0" expanded="true" />
+            <element signature="e#2179#2180#0" expanded="false" />
+            <element signature="e#2224#2225#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/MySearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/SynonymUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="83" column="13" lean-forward="true" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2259,30 +2224,6 @@
         <state relative-caret-position="270">
           <caret line="73" column="35" lean-forward="true" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="505" column="12" lean-forward="true" selection-start-line="505" selection-start-column="12" selection-end-line="505" selection-end-column="12" />
-          <folding>
-            <marker date="1488441085000" expanded="true" signature="1759:1782" ph="select * fro... knowledge" />
-            <marker date="1488441085000" expanded="true" signature="2578:2655" ph="select chat_... chat_log" />
-            <marker date="1488441085000" expanded="true" signature="3278:3348" ph="select answe... knowledge_sub" />
-            <marker date="1488441085000" expanded="true" signature="3943:3998" ph="select joke_... joke" />
-            <marker date="1488441085000" expanded="true" signature="4613:4702" ph="insert into chat_log... " />
-            <marker date="1488441085000" expanded="true" signature="5306:5367" ph="insert into knowledge... " />
-            <marker date="1488441085000" expanded="true" signature="6315:6374" ph="select * fro... Flight" />
-            <marker date="1488441085000" expanded="true" signature="11725:11782" ph="select iatac... base_airport" />
-            <marker date="1488441085000" expanded="true" signature="12414:12471" ph="select displ... base_airport" />
-            <marker date="1488441085000" expanded="true" signature="13124:13187" ph="select * fro... t_flightinfo" />
-            <marker date="1488441085000" expanded="true" signature="18340:18392" ph="select * fro... base_flightstatus" />
-            <marker date="1488441085000" expanded="true" signature="18976:19029" ph="select COUNT... t_flightinfo" />
-            <marker date="1488441085000" expanded="true" signature="19639:19705" ph="select descr... base_flighttask" />
-            <marker date="1488441085000" expanded="true" signature="20262:20313" ph="select cnnam... base_airlines" />
-            <marker date="1488441085000" expanded="true" signature="20848:20914" ph="select descr... base_irregularcode" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2310,10 +2251,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/searchflight/SearchFlightDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/MySearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/ToolsUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="e#1346#1347#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/SynonymUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/util/MysqlUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1698">
+          <caret line="526" column="42" lean-forward="false" selection-start-line="526" selection-start-column="25" selection-end-line="526" selection-end-column="42" />
+          <folding>
+            <marker date="1488505066000" expanded="true" signature="1759:1782" ph="select * fro... knowledge" />
+            <marker date="1488505066000" expanded="true" signature="2578:2655" ph="select chat_... chat_log" />
+            <marker date="1488505066000" expanded="true" signature="3278:3348" ph="select answe... knowledge_sub" />
+            <marker date="1488505066000" expanded="true" signature="3943:3998" ph="select joke_... joke" />
+            <marker date="1488505066000" expanded="true" signature="4613:4702" ph="insert into chat_log... " />
+            <marker date="1488505066000" expanded="true" signature="5306:5367" ph="insert into knowledge... " />
+            <marker date="1488505066000" expanded="true" signature="6315:6374" ph="select * fro... Flight" />
+            <marker date="1488505066000" expanded="true" signature="11725:11782" ph="select iatac... base_airport" />
+            <marker date="1488505066000" expanded="true" signature="12414:12471" ph="select displ... base_airport" />
+            <marker date="1488505066000" expanded="true" signature="13124:13187" ph="select * fro... t_flightinfo" />
+            <marker date="1488505066000" expanded="true" signature="13124:13258" ph="select * fro... t_flightinfo" />
+            <marker date="1488505066000" expanded="true" signature="18565:18617" ph="select * fro... base_flightstatus" />
+            <marker date="1488505066000" expanded="true" signature="19201:19254" ph="select COUNT... t_flightinfo" />
+            <marker date="1488505066000" expanded="true" signature="19864:19930" ph="select descr... base_flighttask" />
+            <marker date="1488505066000" expanded="true" signature="20487:20538" ph="select cnnam... base_airlines" />
+            <marker date="1488505066000" expanded="true" signature="21073:21139" ph="select descr... base_irregularcode" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/minisheep/chatservice/Chat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="816" column="40" lean-forward="true" selection-start-line="816" selection-start-column="40" selection-end-line="816" selection-end-column="40" />
+        <state relative-caret-position="180">
+          <caret line="273" column="85" lean-forward="false" selection-start-line="273" selection-start-column="85" selection-end-line="273" selection-end-column="85" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2567#2583#0" expanded="true" />
@@ -2321,13 +2321,13 @@
             <element signature="e#4175#4183#0" expanded="true" />
             <element signature="e#4267#4283#0" expanded="true" />
             <element signature="e#4336#4352#0" expanded="true" />
-            <element signature="e#24941#24957#0" expanded="true" />
-            <element signature="e#25011#25027#0" expanded="true" />
-            <element signature="e#25084#25092#0" expanded="true" />
-            <element signature="e#44772#44780#0" expanded="true" />
-            <element signature="e#45323#45331#0" expanded="true" />
-            <element signature="e#45508#45516#0" expanded="true" />
-            <element signature="e#48814#48822#0" expanded="true" />
+            <element signature="e#25162#25178#0" expanded="true" />
+            <element signature="e#25232#25248#0" expanded="true" />
+            <element signature="e#25305#25313#0" expanded="true" />
+            <element signature="e#45651#45659#0" expanded="true" />
+            <element signature="e#46202#46210#0" expanded="true" />
+            <element signature="e#46387#46395#0" expanded="true" />
+            <element signature="e#49693#49701#0" expanded="true" />
           </folding>
         </state>
       </provider>

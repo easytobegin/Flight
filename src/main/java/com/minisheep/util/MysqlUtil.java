@@ -402,7 +402,8 @@ public class MysqlUtil {
 	 * 出发城市名和抵达城市名
 	 */
 	public static List<BaseFlightInfo> depCityAndarrCity(String dep, String arr){
-		String searchsql = "select * from t_flightinfo where origin = ? and destination = ?";
+		String searchsql = "select * from t_flightinfo where origin = ? and destination = ?" +
+				"or origin = ? and passby = ? or passby = ? and destination = ?";
 		MysqlUtil mysqlUtil = new MysqlUtil();
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -414,6 +415,10 @@ public class MysqlUtil {
 			ps = (PreparedStatement) conn.prepareStatement(searchsql);
 			ps.setString(1, dep);
 			ps.setString(2, arr);
+			ps.setString(3, dep);
+			ps.setString(4, arr);
+			ps.setString(5, dep);
+			ps.setString(6, arr);
 			rs = ps.executeQuery();
 			while(rs.next()){
 				BaseFlightInfo baseFlightInfo = new BaseFlightInfo();
@@ -498,6 +503,7 @@ public class MysqlUtil {
 				baseFlightInfo.setFlight(rs.getString("flight"));
 				baseFlightInfo.setOrigin(rs.getString("origin"));
 				baseFlightInfo.setDestination(rs.getString("destination"));
+				baseFlightInfo.setPassby(rs.getString("passby"));
 
 				baseFlightInfo.setFlightStatus(rs.getString("flightstatus"));
 				baseFlightInfo.setDirection(rs.getString("direction"));

@@ -308,7 +308,14 @@ public class Chat {
                 }
             } else if (questionCategory.equals("状态")) {
                 for (BaseFlightInfo flight : flights) {
-                    answer = "航班:" + flight.getCarrier() + flight.getFlight() + "，日期:" + flight.getOpdate().substring(0, 10) + "，状态:" + MysqlUtil.codeTodescription(flight.getFlightStatus());
+                    String state = "";
+                    if(flight.getFlightStatus() == null){
+                        state = "/";
+                    }else{
+                        state = MysqlUtil.codeTodescription(flight.getFlightStatus());
+                    }
+
+                    answer = "航班:" + flight.getCarrier() + flight.getFlight() + "，日期:" + flight.getOpdate().substring(0, 10) + "，状态:" + state;
                     flightInfoResult.add(answer);
                 }
             } else if (questionCategory.equals("检票口")) {
@@ -397,7 +404,7 @@ public class Chat {
                     if (flight.getCarouselCode() == null) {
                         carouselCode = "/";
                     } else {
-                        carouselCode = flight.getCheckinCounter();
+                        carouselCode = flight.getCarouselCode();
                     }
                     if(!carouselActualOpen.equals("/")){
                         answer = "航班:" + flight.getCarrier() + flight.getFlight() + "，日期:"
@@ -673,7 +680,13 @@ public class Chat {
             }
         } else if (questionCategory.equals("状态")) {
             for (BaseFlightInfo flight : baseFlightInfos) {
-                answer = "航班:" + flight.getCarrier() + flight.getFlight() + "，日期:" + flight.getOpdate().substring(0, 10) + "，状态:" + MysqlUtil.codeTodescription(flight.getFlightStatus());
+                String state = "";
+                if(flight.getFlightStatus() == null){
+                    state = "/";
+                }else{
+                    state = MysqlUtil.codeTodescription(flight.getFlightStatus());
+                }
+                answer = "航班:" + flight.getCarrier() + flight.getFlight() + "，日期:" + flight.getOpdate().substring(0, 10) + "，状态:" + state;
                 flightInfoResult.add(answer);
             }
         } else if (questionCategory.equals("检票口")) {
@@ -762,7 +775,7 @@ public class Chat {
                 if (flight.getCarouselCode() == null) {
                     carouselCode = "/";
                 } else {
-                    carouselCode = flight.getCheckinCounter();
+                    carouselCode = flight.getCarouselCode();
                 }
                 if(!carouselActualOpen.equals("/")){
                     answer = "航班:" + flight.getCarrier() + flight.getFlight() + "，日期:"
@@ -817,6 +830,20 @@ public class Chat {
                     passby = MysqlUtil.CNNamebyIataCodeSearch(flight.getPassby());
                 } else {
                     passby = "无";
+                }
+
+                /*
+                判断航班状态
+                 */
+                String status = "";
+                if(flight.getFlightStatus() == null){
+                    status = "";
+                }else{
+                    status = flight.getFlightStatus();
+                }
+                //航班状态为ARR,DEP,CNL的时候直接过滤
+                if(status.equals("ARR") || status.equals("DEP") || status.equals("CNL")){
+                    continue;
                 }
                 if(passby.equals("无")){
                     answer = "航班:" + flight.getCarrier() + flight.getFlight() + "，日期:" + flight.getOpdate().substring(0, 10) + "，航线:" + MysqlUtil.CNNamebyIataCodeSearch(flight.getOrigin())
